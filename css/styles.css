@@ -9,6 +9,7 @@
 body {
     font-family: 'Roboto', arial, sans-serif;
     font-size: 10px;
+    background-color: #035861;
 }
 
 .clearfix::after {
@@ -18,10 +19,20 @@ body {
 }
 
 div.wrap {
+    margin: 0 auto;
+    color: #f2f2f2;
+    height: 200vh;
     font-size: 1.8em;
 }
 
-header {}
+header {
+    background-color: #022840;
+    color: white;
+}
+
+nav {
+    background-color: #022840;
+}
 
 nav {
 }
@@ -33,7 +44,6 @@ nav ul {
 }
 
 nav ul li {
-    /* float: left; */
     float: left;
 }
 
@@ -42,15 +52,29 @@ nav ul li a {
     color: lightblue;
     font-size: 1.8em;
     text-decoration: none;
-    line-height: 5vh;
-    padding: 0 5vw;
+    font-size: 1em;
+    text-transform: uppercase;
+    line-height: 10%;
+    padding: 0 5%;
+
 }
 
 main {}
 
+main section a {
+    color: #C2F0FF;
+    text-decoration: none;
+}
+
+/* main section:nth-child(odd) {
+    background-color: #03598A;
+} */
+
 footer {
-    background-color: black;
+    padding: 5vh 0;
+    background-color: #022840;
     color: white;
+    text-align: center;
 }
 
 footer a {
@@ -60,5 +84,4 @@ footer a {
 
 footer .attribution {}
 
-footer .attribution a {}}
-
+footer .attribution a {}
