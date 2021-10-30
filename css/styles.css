@@ -9,25 +9,43 @@
 body {
     font-family: 'Roboto', arial, sans-serif;
     font-size: 10px;
+    background-color: #036873;
 }
 
 div.wrap {
     font-size: 2em;
+    margin: 0 auto;
+    /* color: #f2f2f2; */
+    color: white;
+    height: 200vh;
 }
 
-header {}
+header {
+    background-color: #022840;
+}
 
-nav {}
+nav.menu {
+    background-color: #022840;
+}
 
-nav ul {}
+nav.menu ul {}
 
-nau ul li {}
+nav.menu ul li {}
+
+nav.menu ul li a {
+    font-size: 1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: lightblue;
+}
 
 main {}
 
 footer {
-    background-color: black;
+    padding: 5vh 0;
+    background-color: #022840;
     color: white;
+    text-align: center;
 }
 
 footer a {
@@ -37,5 +55,4 @@ footer a {
 
 footer .attribution {}
 
-footer .attribution a {}}
-
+footer .attribution a {}
