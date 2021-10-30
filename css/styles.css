@@ -7,10 +7,35 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', arial, sans-serif;
     font-size: 10px;
 }
 
 div.wrap {
     font-size: 2em;
 }
+
+header {}
+
+nav {}
+
+nav ul {}
+
+nau ul li {}
+
+main {}
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+footer a {
+    color: lightblue;
+    text-decoration: none;
+}
+
+footer .attribution {}
+
+footer .attribution a {}}
+
