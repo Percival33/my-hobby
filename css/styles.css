@@ -9,19 +9,20 @@
 body {
     font-family: 'Roboto', arial, sans-serif;
     font-size: 10px;
-    background-color: #036873;
+    background-color: #035861;
 }
 
 div.wrap {
     font-size: 2em;
     margin: 0 auto;
     /* color: #f2f2f2; */
-    color: white;
+    color: #f2f2f2;
     height: 200vh;
 }
 
 header {
     background-color: #022840;
+    color: white;
 }
 
 nav.menu {
@@ -40,6 +41,15 @@ nav.menu ul li a {
 }
 
 main {}
+
+main section a {
+    color: #C2F0FF;
+    text-decoration: none;
+}
+
+/* main section:nth-child(odd) {
+    background-color: #03598A;
+} */
 
 footer {
     padding: 5vh 0;
