@@ -26,20 +26,24 @@ div.wrap {
 }
 
 header {
-    background-color: #022840;
+    font-size: 2em;
+    padding: 40px;
+    text-align: center;
+    /* background-color: #022840; */
+    background: linear-gradient(180deg, rgba(3,72,115,1) 35%, rgba(2,40,64,1) 100%);
     color: white;
 }
 
-nav {
-    background-color: #022840;
-}
+header h1 {}
 
 nav {
+    background-color: rgba(2,40,64,1);
+    padding: 10px;
 }
 
 nav ul {
     max-width: 1280px;
-    margin: 0 auto;
+    padding-left: 15%;
     list-style: none;
 }
 
@@ -51,12 +55,15 @@ nav ul li a {
     display: block;
     color: lightblue;
     font-size: 1.8em;
+    padding: 0 1.5em;
+    border-right: 2px solid #f2f2f2;
     text-decoration: none;
-    font-size: 1em;
     text-transform: uppercase;
-    line-height: 10%;
-    padding: 0 5%;
+    line-height: 1.8em;
+}
 
+nav ul li a:nth-last-child(1) {
+    border: none;
 }
 
 main {}
