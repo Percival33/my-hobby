@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Roboto', arial, sans-serif;
-    font-size: 10px;
+    font-size: 20px;
     background-color: #f2f2f2;
 }
 
@@ -22,44 +22,39 @@ div.wrap {
     margin: 0 auto;
     color: rgba(30,30,30,1);
     min-height: 200vh;
-    font-size: 1.8em;
     line-height: 150%;
 }
 
 .active {
     /* background-color: #15405d; */
-    background-color: red;
+    background-color: #034959;
 }
 
 header {
-    font-size: 2em;
-    padding: 40px;
+    font-size: 45px;
+    padding: 90px 50px;
     text-align: center;
-    background: linear-gradient(180deg, rgba(3,72,115,1) 35%, rgba(2,40,64,1) 100%);
+    background: linear-gradient(180deg, rgba(3,72,115,1) 35%, rgba(51,51,51,1) 100%);
     color: white;
 }
-
-header h1 {}
 
 nav {
     display: flex;
     justify-content: center;
     background-color: #333;
-    overflow:hidden;
 }
 
 nav .sub-nav a {
     /* float:left; */
     display: block;
-    font-size: 20px;
     padding: 14px 26px;
     text-decoration: none;
     color:lightblue;
+    transition: .5s;
 }
 
 nav .sub-nav {
     float: left;
-    /* overflow: hidden; */
 }
 
 nav .sub-nav-alt {
@@ -72,38 +67,78 @@ nav .sub-nav-alt a {
     float: left;
     display: block;
     background-color: #333;
-    /* overflow: hidden; */
 }
 
-nav .sub-nav a:hover{
-    padding: 14 52px;
-    background-color: blue;
-}
-
-nav .sub-nav-alt a:hover {
-    background-color: green;
+nav .sub-nav a:hover, nav .sub-nav-alt a:hover{
+    background-color: #022931;
 }
 
 nav .sub-nav:hover .sub-nav-alt {
     display: block;
 }
 
-main {}
+main {
+    margin: 5% 25%;
+    text-align: justify;
+}
+
+main h3 {
+    font-size: 30px;
+    margin: 5% auto;
+}
+
+main section {
+    padding: 0 10px;
+    line-height: 150%;
+}
+
+main section ul {
+    list-style: none;
+    font-weight: bold;
+}
+
+main section p.center {
+    padding: 10px 0;
+    text-align: center;
+}
+
+ul li svg {
+    position: absolute;
+    width: 50px;
+    z-index: -1;
+}
+
+ul li svg rect {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+main section ul li {
+    float:left;
+    padding: 30px 120px;
+    text-align: center;
+}
 
 main section a {
-    color: blue;
+    color: #bf2c38;
     text-decoration: none;
 }
 
 div.img {
-    margin: 20px 100px;
+    /* margin: 2% auto; */
 }
 
 div.img img{
-    height: 300px;
-    width: 400px;
     float: left;
+    /* position: relative; */
+    margin: 2% 1%;
+    /* height: 300px; */
+    width: 48%;
+    height: 300px;
 }
+
+div.img img:hover {}
 
 footer {
     padding: 20px 0;
