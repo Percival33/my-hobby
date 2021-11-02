@@ -17,7 +17,14 @@
         </header>
         <nav>
             <ul class="clearfix">
-                <li><a href="index.html">Strona główna</a></li>
+                <li class="main">
+                    <a class="active" href="index.html">Strona główna</a>
+                    <ul class="sub-menu clearfix">
+                        <li><a href="#sport">Żeglarstwo sportowe</a></li>
+                        <li><a href="#hobby">Żeglarstwo turystyczne</a></li>
+                        <li><a href="#other">Inne</a></li>
+                    </ul>
+                </li>
                 <li><a href="about.html">O mnie</a></li>
                 <li><a href="pictures.html">Zdjęcia</a></li>
                 <li><a href="quiz.html">Quiz</a></li>
@@ -25,7 +32,6 @@
         </nav>
         <main>
             <section>
-
                 <p><strong>Żeglarstwo</strong> – dyscyplina sportów wodnych, rodzaj turystyki lub rekreacji, a także
                     forma szkoleń – zarówno dla późniejszych marynarzy, oficerów i kapitanów jednostek, jak i jako tzw.
                     szkoła
@@ -44,7 +50,7 @@
             </section>
 
             <h3>Żeglarstwo sportowe</h3>
-            <section>
+            <section id="sport">
                 <p>Skupia się na rywalizacji w zawodach, zwanych regatami, łodzi o podobnych parametrach. Zawody te
                     polegają
                     na
@@ -72,7 +78,7 @@
             </section>
 
             <h3>Żeglarstwo turystyczne</h3>
-            <section>
+            <section id="hobby">
                 <p>W jachtach turystycznych, w przeciwieństwie do sportowych, dużą uwagę przykłada się do wygody i
                     komfortu
                     żeglugi w każdych warunkach. Na jachcie panują waruntki zbliżone do mieszkalnych, ponieważ zazwyczaj
@@ -86,7 +92,7 @@
                     <img src="../img/antila.jpg" alt="zdjęcie antili">
                 </div>
             </section>
-            <section>
+            <section id="other">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor laudantium corporis aut esse at,
                     delectus id dignissimos maiores ipsam ab similique quasi cumque maxime natus quas laborum
                     necessitatibus odio facilis. Facere autem sed vitae illum in impedit perspiciatis, a sint? Aperiam
