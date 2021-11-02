@@ -40,52 +40,7 @@ header {
 
 header h1 {}
 
-nav {
-    background-color: rgba(2,40,64,1);
-    padding: 10px;
-    margin-bottom: 20px;
-}
 
-nav ul {
-    max-width: 1280px;
-    padding-left: 15%;
-    list-style: none;
-}
-
-nav ul li {
-    float: left;
-    border-right: 2px solid #f2f2f2;
-
-}
-
-nav ul li a {
-    display: block;
-    color: lightblue;
-    font-size: 1.8em;
-    padding: 0 1.5em;
-    text-decoration: none;
-    text-transform: uppercase;
-    line-height: 1.8em;
-}
-
-nav ul li a:hover {
-    background-color: #15405d;
-}
-
-nav li.main ul.sub-menu{
-    /* display:none; */
-    z-index: 1;
-}
-
-nav li.main a:hover ul.sub-menu li{
-    display: block;
-    background: red;
-}
-
-nav ul.sub-menu li {
-    font-size: 20px;
-    border: none;
-}
 
 main {}
 
