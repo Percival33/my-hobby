@@ -24,7 +24,7 @@ body {
 div.wrap {
     margin: 0 auto;
     color: rgba(30, 30, 30, 1);
-    min-height: 200vh;
+    min-height: 100vh;
     line-height: 150%;
 }
 
