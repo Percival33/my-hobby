@@ -170,7 +170,7 @@ div.img-set2 {
 
 
 div.img-set1 img, div.img-set2 img {
-    grid-area: "img-img";
+    grid-area: img-img;
     /* margin: 2% 1%; */
     width: 100%;
     height: 100%;
@@ -239,7 +239,7 @@ footer a {
     }
 
     div.img-set1, div.img-set2 {
-        grid-area: "img";
+        grid-area: img;
     }
 }
 
