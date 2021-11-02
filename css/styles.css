@@ -6,9 +6,12 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 20px;
+}
+
 body {
     font-family: 'Roboto', arial, sans-serif;
-    font-size: 20px;
     background-color: #f2f2f2;
 }
 
@@ -30,17 +33,21 @@ div.wrap {
 }
 
 header {
-    font-size: 40px;
+    font-size: 2rem;
     padding: 90px 50px;
     text-align: center;
     background: linear-gradient(180deg, rgba(3, 72, 115, 1) 35%, rgba(51, 51, 51, 1) 100%);
     color: white;
+    line-height: 150%;
 }
 
 nav {
     display: flex;
     justify-content: center;
     background-color: #333;
+    width: 100%;
+    margin:0 auto;
+    /* font-size: ; */
 }
 
 nav .sub-nav a {
@@ -84,12 +91,12 @@ main {
 }
 
 main h3 {
-    font-size: 30px;
-    margin: 20px auto;
+    font-size: 1.5rem;
+    margin: 1rem auto;
 }
 
 main section {
-    padding: 0 10px;
+    margin: 2% auto;
     line-height: 150%;
 }
 
@@ -109,6 +116,7 @@ main section p.center {
 
 main ul li img {
     grid-area: arrow;
+    width: 100px;
 }
 
 main ul li svg {
@@ -172,7 +180,8 @@ div.img-set1 img, div.img-set2 img {
 /* div.img img:hover {} */
 
 footer {
-    padding: 20px 0;
+    margin: 0 auto;
+    padding: 2% 0;
     background-color: #022840;
     color: #f2f2f2;
     text-align: center;
@@ -183,12 +192,63 @@ footer a {
     text-decoration: none;
 }
 
-@media (max-width: 769px) {
+@media (max-with: 1024px) {
+    html {
+        font-size: 19px;
+    }
+    /* header {
+        font-size: 1.3rem;
+    } */
+}
+
+@media (max-width: 812px) {
+    html {
+        font-size: 16px;
+    }
+    /* body {
+        font-size: 0.9rem;
+    }
     header {
-        font-size: 30px;
+        font-size: 1.2rem;
+    } */
+    main section ul {
+        grid-template-columns: 0.5fr 0.5fr;
+        grid-template-rows: 1fr;
+        /* grid-template-areas: "arrow arrow"; */
     }
 
-    div.img img {
-        
+    main ul li img {
+        width: 50%;
     }
+
+    main ul li svg {
+        width: 75%;
+    }
+
+    div.img-set1 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+        grid-template-areas: "img" "img" "img" "img" "img" "img";
+        /* grid-area: "img" "img" "img" "img" "img" "img"; */
+    }
+
+    div.img-set2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.5fr;
+        grid-template-areas: "img" "img";
+    }
+
+    div.img-set1, div.img-set2 {
+        grid-area: "img";
+    }
+}
+
+@media (max-width: 640px) {
+    /* body {
+        font-size: 0.8rem;
+    }
+    header {
+        font-size: 1.2rem;
+    }
+     */
 }
