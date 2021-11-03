@@ -20,7 +20,6 @@
                 <div class="sub-nav-alt">
                     <a href="index.html#sport">Żeglarstwo sportowe</a>
                     <a href="index.html#hobby">Żeglarstwo turystyczne</a>
-                    <a href="index.html#other">Inne</a>
                 </div>
             </div>
             <div class="sub-nav"><a href="about.html">O mnie</a></div>
@@ -29,27 +28,77 @@
 
         </nav>
         <main>
-            <section>
-                <h3>Headign</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quasi sequi voluptatibus minus doloribus a facilis adipisci, veritatis totam nisi blanditiis, veniam, ipsa ad consequuntur tenetur dolore natus! Fugit, esse.
-                </p>
-            </section>
+            <label class="form" for="form">Sprawdź swoją wiedzę o żeglarstwie!</label>
+            <form class="form" action="/quiz.html" method="GET">
+                <div class="input-text">
+                    <label for="text">Jaki kolor mają żagle?</label>
+                    <div>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="input-radio">
+                    <label for="input-radio">Lewa burta jachtu to:</label>
+                    <div>
+                        <input type="radio" name="radio" value="Sterburta">
+                        <label for="radio">Sterburta</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="radio" value="Sztag">
+                        <label for="radio">Sztag</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="radio" value="Bakburta">
+                        <label for="radio">Bakburta</label>
+                    </div>
+                </div>
+                <div class="input-range">
+                    <!-- <div> -->
+                        <label for="range">Jaka jest maksymalna długość jachtu, którym można pływać bez patentu? (3 -
+                            11)</label>
+                        <input type="range" id="range" name="range" min="3" max="11" step="0.5"
+                            oninput="num.value = this.value">
+                        <output id="num">7</output>
+                    <!-- </div> -->
+                </div>
+                <div class="input-checkbox">
+                    <label for="input-checkbox">Które z tych nazw to nazwy żagli?</label>
+                    <div>
+                        <input type="checkbox" name="fok">
+                        <label for="checkbox">fok</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="achterdek">
+                        <label for="checkbox">achterdek</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="spinaker">
+                        <label for="checkbox">spinaker</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="grot">
+                        <label for="checkbox">grot</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="rumpel">
+                        <label for="checkbox">rumpel</label>
+                    </div>
+                </div>
+                <div class="input-text">
+                    <label for="input-text">Która z tych łódek jest większa? Omega czy Laser?</label>
+                    <div>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="clearfix">
 
-            <section>
-                <h3>Headign</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem doloremque harum officia reiciendis dolore molestiae dolor praesentium soluta est nisi molestias exercitationem blanditiis amet ipsam laboriosam repellat, debitis nemo voluptatem.
-                </p>
-            </section>
-
-            <section>
-                <h3>Headign</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error sunt necessitatibus et. Molestias ipsum reprehenderit asperiores soluta fugit! Accusamus, dolores dolore earum rerum quasi atque facilis eligendi pariatur ratione fugiat.
-                </p>
-            </section>
-            <section>
-                <h3>Headign</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum distinctio natus doloremque quos illo vel nobis deleniti dignissimos esse quidem eum omnis vitae aspernatur, assumenda vero fuga iste blanditiis. Neque.</p>
-            </section>
+                    <input class="btn" type="submit" value="Sprawdź odpowiedzi">
+                    <input class="btn" type="reset" value="Usuń odpowiedzi">
+                </div>
+                <!-- 
+                   text
+                   checkbox
+                -->
+            </form>
         </main>
         <footer>
             <p>Marcin Jarczewski &copy; Informatyka grupa 2 2021</p>

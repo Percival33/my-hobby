@@ -53,11 +53,10 @@ nav {
     background-color: #333;
     width: 100%;
     margin:0 auto;
-    /* font-size: ; */
+    font-size: 1.4rem;
 }
 
 nav .sub-nav a {
-    /* float:left; */
     display: block;
     padding: 14px 26px;
     text-decoration: none;
@@ -258,4 +257,38 @@ footer a {
     html {
         font-size: 0.8rem;
     }
+}
+
+main label.form {
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+main form input.btn {
+    display: inline;
+    float: left;
+    padding: 1% 2%;
+    outline: none;
+    /* margin: 0 auto; */
+    width: 50%;
+    background-color: #034959;
+    /* color: lightblue; */
+    color: #f2f2f2;
+    font-size: 100%;
+}
+
+main form input.btn:hover {
+    background-color: #022931;
+}
+
+main form div div {
+    margin: 1% 5%;
+}
+
+main from label {
+    font-size: 1.3rem;
+    font-weight: 550;
 }
