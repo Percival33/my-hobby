@@ -117,6 +117,10 @@ main section ul {
     font-weight: bold;
 }
 
+main section p {
+    margin-bottom: 10px;
+}
+
 main section p.center {
     padding: 10px 0;
     text-align: center;
@@ -172,11 +176,26 @@ div.img-set2 {
         "img img";
 }
 
+div.img-set1 div, div.img-set2 div {
+    /* position:absolute; */
+    /* display: flex; */
+    position: relative;
+    border: 2px solid #022840;
+}
+
+div.img-set1 div p, div.img-set2 div p {
+    display: block;
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    text-align: center;
+}
+
 div.img-set1 img, div.img-set2 img {
     /* grid-area: auto; */
     /* margin: 2% 1%; */
     width: 100%;
-    height: 100%;
+    max-height: 80%;
     object-fit: cover;
 }
 
@@ -231,12 +250,9 @@ main from label {
     html {
         font-size: 19px;
     }
-    /* header {
-        font-size: 1.3rem;
-    } */
 }
 
-@media (max-width: 720px) {
+@media (max-width: 700px) {
     html {
         font-size: 16px;
     }
@@ -267,7 +283,7 @@ main from label {
     }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 500px) {
     html {
         font-size: 0.8rem;
     }
