@@ -235,7 +235,7 @@ main from label {
     font-weight: 550;
 }
 
-@media (max-with: 1024px) {
+@media (max-width: 1024px) {
     html {
         font-size: 19px;
     }
