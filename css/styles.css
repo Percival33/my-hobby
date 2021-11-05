@@ -141,7 +141,10 @@ main ul li svg {
 }
 
 main ul li svg rect {
+    display:block;
+    width:100%;
     text-align: center;
+    margin: 0 auto;
 }
 
 main section ul li {
@@ -223,7 +226,7 @@ footer a {
     text-decoration: none;
 }
 
-main label.form {
+main label.quiz {
     display: block;
     font-weight: bold;
     text-align: center;
@@ -316,6 +319,6 @@ th {
 
 @media (max-width: 500px) {
     html {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 }

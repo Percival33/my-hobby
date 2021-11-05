@@ -7,6 +7,7 @@
     <title>Quiz</title>
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="/css/styles.css">
+    <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -22,14 +23,14 @@
                     <a href="index.html#hobby">Żeglarstwo turystyczne</a>
                 </div>
             </div>
-            <div class="sub-nav"><a href="pictures.html">Zdjęcia</a></div>
+            <div class="sub-nav"><a href="other.html">Inne</a></div>
             <div class="sub-nav active"><a href="quiz.html">Quiz</a></div>
 
         </nav>
         <main>
-            <label class="form" for="form">Sprawdź swoją wiedzę o żeglarstwie!</label>
-            <form class="form" action="/quiz.html" method="GET">
-                <div class="input-text">
+            <label class="quiz" for="quiz">Sprawdź swoją wiedzę o żeglarstwie!</label>
+            <form class="quiz" action="/quiz.html" method="GET">
+                <div class="select">
                     <label class="question" for="select">Jaki kolor mają żagle?</label>
                     <div>
                         <select name="select" id="color">
@@ -67,35 +68,35 @@
                 <div class="input-checkbox">
                     <label class="question" for="input-checkbox">Które z tych nazw to nazwy żagli?</label>
                     <div>
-                        <input type="checkbox" name="fok">
+                        <input class="checkbox" type="checkbox" name="fok">
                         <label for="checkbox">fok</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="achterdek">
+                        <input type="checkbox" name="checkbox" value="achterdek">
                         <label for="checkbox">achterdek</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="spinaker">
+                        <input type="checkbox" name="checkbox" value="spinaker">
                         <label for="checkbox">spinaker</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="grot">
+                        <input type="checkbox" name="checkbox" value="grot">
                         <label for="checkbox">grot</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="rumpel">
+                        <input type="checkbox" name="checkbox" value="rumpel">
                         <label for="checkbox">rumpel</label>
                     </div>
                 </div>
                 <div class="input-text">
                     <label class="question" for="input-text">Która z tych łódek jest większa? Omega czy Laser?</label>
                     <div>
-                        <input type="text">
+                        <input id="text" type="text">
                     </div>
                 </div>
                 <div class="clearfix">
 
-                    <input class="btn" type="submit" value="Sprawdź odpowiedzi">
+                    <input class="btn" id="submit" type="submit" value="Sprawdź odpowiedzi">
                     <input class="btn" type="reset" value="Usuń odpowiedzi">
                 </div>
             </form>
