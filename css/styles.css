@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 * {
     margin: 0;
@@ -228,7 +228,9 @@ main label.form {
     font-weight: bold;
     text-align: center;
     margin: 0 auto;
+    margin-bottom: 5%;
     font-size: 1.5rem;
+    border-bottom: 2px solid rgba(191, 44, 56, 0.5);
 }
 
 main form input.btn {
@@ -252,9 +254,9 @@ main form div div {
     margin: 1% 5%;
 }
 
-main from label {
+main form div label.question {
     font-size: 1.3rem;
-    font-weight: 550;
+    font-weight: 500;
 }
 
 table {

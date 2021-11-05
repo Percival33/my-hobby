@@ -30,13 +30,18 @@
             <label class="form" for="form">Sprawdź swoją wiedzę o żeglarstwie!</label>
             <form class="form" action="/quiz.html" method="GET">
                 <div class="input-text">
-                    <label for="text">Jaki kolor mają żagle?</label>
+                    <label class="question" for="select">Jaki kolor mają żagle?</label>
                     <div>
-                        <input type="text">
+                        <select name="select" id="color">
+                            <option value="black">czarny</option>
+                            <option value="white">biały</option>
+                            <option value="yellow">żółty</option>
+                            <option value="red">czerwony</option>
+                          </select>
                     </div>
                 </div>
                 <div class="input-radio">
-                    <label for="input-radio">Lewa burta jachtu to:</label>
+                    <label class="question" for="input-radio">Lewa burta jachtu to:</label>
                     <div>
                         <input type="radio" name="radio" value="Sterburta">
                         <label for="radio">Sterburta</label>
@@ -52,7 +57,7 @@
                 </div>
                 <div class="input-range">
                     <!-- <div> -->
-                        <label for="range">Jaka jest maksymalna długość jachtu, którym można pływać bez patentu? (3 -
+                        <label class="question" for="range">Jaka jest maksymalna długość jachtu, którym można pływać bez patentu? (3 -
                             11)</label>
                         <input type="range" id="range" name="range" min="3" max="11" step="0.5"
                             oninput="num.value = this.value">
@@ -60,7 +65,7 @@
                     <!-- </div> -->
                 </div>
                 <div class="input-checkbox">
-                    <label for="input-checkbox">Które z tych nazw to nazwy żagli?</label>
+                    <label class="question" for="input-checkbox">Które z tych nazw to nazwy żagli?</label>
                     <div>
                         <input type="checkbox" name="fok">
                         <label for="checkbox">fok</label>
@@ -83,7 +88,7 @@
                     </div>
                 </div>
                 <div class="input-text">
-                    <label for="input-text">Która z tych łódek jest większa? Omega czy Laser?</label>
+                    <label class="question" for="input-text">Która z tych łódek jest większa? Omega czy Laser?</label>
                     <div>
                         <input type="text">
                     </div>
