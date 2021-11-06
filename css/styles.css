@@ -280,6 +280,25 @@ th {
     color:#f2f2f2;
 }
 
+tbody tr:hover {
+    animation: animation 1s;
+    animation-fill-mode: forwards;
+}
+
+tbody tr:hover td a{
+    color: #FF7884;
+}
+
+@keyframes animation {
+    0% {
+        background-color: #f2f2f2;
+    }
+    100% {
+        background-color: #022931;
+        color: #f2f2f2;
+    }
+}
+
 @media (max-width: 1024px) {
     html {
         font-size: 19px;
