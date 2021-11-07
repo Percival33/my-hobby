@@ -7,6 +7,10 @@
     <title>Quiz</title>
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"
+        integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </head>
 
@@ -29,7 +33,7 @@
         </nav>
         <main>
             <label class="quiz" for="quiz">Sprawdź swoją wiedzę o żeglarstwie!</label>
-            <form class="quiz" action="/quiz.html">
+            <form class="quiz">
                 <div class="select">
                     <label class="question" for="select">Jaki kolor mają żagle?</label>
                     <div>
@@ -38,7 +42,7 @@
                             <option value="white">biały</option>
                             <option value="yellow">żółty</option>
                             <option value="red">czerwony</option>
-                          </select>
+                        </select>
                     </div>
                 </div>
                 <div class="input-radio">
@@ -55,14 +59,18 @@
                         <input type="radio" name="radio" value="Bakburta">
                         <label for="radio">Bakburta</label>
                     </div>
+                    <div>
+                        <input style="display: none;" type="radio" name="radio" value="empty" checked>
+                    </div>
                 </div>
                 <div class="input-range">
                     <!-- <div> -->
-                        <label class="question" for="range">Jaka jest maksymalna długość jachtu, którym można pływać bez patentu? (3 -
-                            11)</label>
-                        <input type="range" id="range" name="range" min="3" max="11" step="0.5"
-                            oninput="num.value = this.value">
-                        <output id="num">7</output>
+                    <label class="question" for="range">Jaka jest maksymalna długość jachtu, którym można pływać bez
+                        patentu? (3 -
+                        11)</label>
+                    <input type="range" id="range" name="range" min="3" max="11" step="0.5"
+                        oninput="num.value = this.value">
+                    <output id="num">7</output>
                     <!-- </div> -->
                 </div>
                 <div class="input-checkbox">
@@ -97,9 +105,13 @@
                 <div class="clearfix">
 
                     <input class="btn" id="submit" type="submit" value="Sprawdź odpowiedzi">
-                    <input class="btn" type="reset" value="Usuń odpowiedzi">
+                    <input class="btn reset" type="reset" value="Usuń odpowiedzi">
                 </div>
             </form>
+            <div id="dialog" title="Twój wynik">
+                <p>Twoj wynik to:</p>
+                <p>0/7</p>
+            </div>
         </main>
         <footer>
             <p>Marcin Jarczewski &copy; Informatyka grupa 2 2021</p>

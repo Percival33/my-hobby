@@ -299,6 +299,17 @@ tbody tr:hover td a{
     }
 }
 
+.ui-widget-header,.ui-state-default, .ui-button {
+    background:#b9cd6d;
+    border: 1px solid #b9cd6d;
+    color: #FFFFFF;
+    font-weight: bold;
+ }
+
+ .ui-widget {
+     background-color: #036873;
+ }
+
 @media (max-width: 1024px) {
     html {
         font-size: 19px;
