@@ -32,10 +32,10 @@
 
         </nav>
         <main>
-            <label class="quiz" for="quiz">Sprawdź swoją wiedzę o żeglarstwie!</label>
+            <h3>Sprawdź swoją wiedzę o żeglarstwie!</h3>
             <form id="quiz">
                 <div class="select">
-                    <label class="question" for="color">Jaki kolor mają żagle?</label>
+                    <h4 class="question">Jaki kolor mają żagle?</h4>
                     <div>
                         <select name="select" id="color">
                             <option value="black">czarny</option>
@@ -45,8 +45,8 @@
                         </select>
                     </div>
                 </div>
-                <label class="question" for="input-radio">Lewa burta jachtu to:</label>
                 <div id="input-radio">
+                    <h4 class="question">Lewa burta jachtu to:</h4>
                     <div>
                         <input type="radio" name="radio" id="radio1" value="Sterburta">
                         <label for="radio1">Sterburta</label>
@@ -64,14 +64,14 @@
                     </div>
                 </div>
                 <div class="input-range">
-                    <label class="question" for="range">Jaka jest maksymalna długość jachtu, którym można pływać bez
-                        patentu? (3 - 11)</label>
+                    <h4 class="question">Jaka jest maksymalna długość jachtu, którym można pływać bez
+                        patentu? (3 - 11)</h4>
                     <input type="range" id="range" name="range" min="3" max="11" step="0.5"
                         oninput="num.value = this.value">
                     <output id="num">4</output>
                 </div>
-                <label class="question" for="input-checkbox">Które z tych nazw to nazwy żagli?</label>
                 <div id="input-checkbox">
+                    <h4 class="question">Które z tych nazw to nazwy żagli?</h4>
                     <div>
                         <input type="checkbox" id="checkbox1" name="checkbox" value="fok">
                         <label for="checkbox1">fok</label>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
                 <div class="input-text">
-                    <label class="question" for="input-text">Która z tych łódek jest większa? Omega czy Laser?</label>
+                    <h4 class="question">Która z tych łódek jest większa? Omega czy Laser?</h4>
                     <div>
                         <input id="input-text" type="text">
                     </div>
