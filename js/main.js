@@ -15,44 +15,72 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    function addParagrapgh(where) {
+    function addParagrapgh(where, text) {
         let p = document.createElement("P");
-        p.innerHTML = "Brak wyników. Rozwiąż quiz!"
+        p.innerHTML = text;
         let div = document.querySelector(where);
         div.appendChild(p);
     }
 
+    // function getLocalResults() {
+    //     const obj = JSON.parse(localStorage.getItem('results'));
+    //     return obj;
+    // }
+
+    getSessionResults = () => { // should always return an array
+        const obj = JSON.parse(sessionStorage.getItem('results'));
+        // console.log(`${JSON.parse(obj)} obj`);
+        if (obj === null)
+            return JSON.parse(JSON.stringify({
+                "results": Array(0)
+            })).results;
+        return obj.results;
+    }
+
+    // function setLocalResults(data) {
+    //     localStorage.setItem('results', JSON.stringify(data));
+    // }
+
+    setSessionResults = (data) => { // gets an array
+        sessionStorage.setItem('results', JSON.stringify({
+            "results": data
+        }));
+    }
+
     document.querySelector('#quiz').onclick = () => {};
+
     document.querySelector('#results-session button').onclick = () => {
         console.log('==================================================');
-        let results = localStorage.getItem("results");
-        console.log(`session results = ${results}`);
-        if (document.querySelector('#results-session div p') === null) {
-            addParagrapgh('#results-session div');
-        } else {
-            results = JSON.parse(results);
+        const paragraps = document.querySelectorAll('#results-session div p');
+        console.log(paragraps.length);
+        console.log(getSessionResults().length);
+
+        if (paragraps.length === 0 && getSessionResults().length === 0) {
+            addParagrapgh('#results-session div', 'Brak wyników. Rozwiąż quiz!');
+        } else if(getSessionResults().length > 0) {
+            let div = document.querySelector('#results-session div');
+            for (let i = 0; i < paragraps.length; i++) {
+                div.removeChild(div.childNodes[i]);
+            }
+            const results = getSessionResults();
             for (let i = 0; i < results.length; i++) {
-                console.log(`i = ${i} session res = ${results[i]}`);
+                // console.log(`i = ${i} session res = ${results[i]}`);
+                addParagrapgh('#results-session div', results[i]);
             }
         }
     };
 
-
-
-    document.querySelector('#results-local button').onclick = () => {
-        console.log('==================================================');
-        // document.querySelector('#results-local').style.height = "100%";
-        let results = localStorage.getItem("results");
-        console.log(`local results = ${results}`);
-        if (document.querySelector('#results-local div p') === null) {
-            addParagrapgh('#results-local div');
-        } else {
-            results = JSON.parse(results);
-            for (let i = 0; i < results.length; i++) {
-                console.log(`i = ${i} local res = ${results[i]}`);
-            }
-        }
-    }
+    // document.querySelector('#results-local button').onclick = () => {
+    //     // console.log('==================================================');
+    //     if (document.querySelector('#results-local div p') === null) {
+    //         addParagrapgh('#results-local div');
+    //     } else {
+    //         const results = getLocalResults();
+    //         for (let i = 0; i < results.length; i++) {
+    //             console.log(`i = ${i} local res = ${results[i]}`);
+    //         }
+    //     }
+    // }
 });
 
 $(document).ready(function () {
@@ -60,22 +88,39 @@ $(document).ready(function () {
         autoOpen: false,
         buttons: {
             'Zamknij': function () {
+                const points = $(this).data('points');
+                let arr = getSessionResults();
+
+                console.log(arr);
+                arr.push(points);
+                setSessionResults(arr);
+
                 $(this).dialog("close");
             },
-            'Zapisz wynik': function() {
+            'Zapisz wynik': function () {
                 const points = $(this).data('points');
                 console.log(points);
-                const results = localStorage.getItem("results");
-                console.log(results);
-                // localStorage.setItem("results", JSON.stringify(myJSON));
+
+
+                // if (!localStorage.getItem('results')) {
+                //     let obj = {
+                //         "results": [points]
+                //     }
+                //     localStorage.setItem('results', JSON.stringify(obj));
+                // } else {
+                //     const results = getLocalResults();
+                //     // console.log(obj);
+                //     results.push(points);
+                //     setLocalResults(results);
+
+                // }
                 $(this).dialog("close");
             }
         }
     });
     $("#submit").click(function () {
-        // console.log('==========================================');
         let sail = [];
-        
+
         $("input:checkbox[name=checkbox]:checked").each(function () {
             sail.push($(this).val());
         });
