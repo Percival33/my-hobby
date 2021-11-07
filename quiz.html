@@ -33,9 +33,9 @@
         </nav>
         <main>
             <label class="quiz" for="quiz">Sprawdź swoją wiedzę o żeglarstwie!</label>
-            <form class="quiz">
+            <form id="quiz">
                 <div class="select">
-                    <label class="question" for="select">Jaki kolor mają żagle?</label>
+                    <label class="question" for="color">Jaki kolor mają żagle?</label>
                     <div>
                         <select name="select" id="color">
                             <option value="black">czarny</option>
@@ -45,61 +45,58 @@
                         </select>
                     </div>
                 </div>
-                <div class="input-radio">
-                    <label class="question" for="input-radio">Lewa burta jachtu to:</label>
+                <label class="question" for="input-radio">Lewa burta jachtu to:</label>
+                <div id="input-radio">
                     <div>
-                        <input type="radio" name="radio" value="Sterburta">
-                        <label for="radio">Sterburta</label>
+                        <input type="radio" name="radio" id="radio1" value="Sterburta">
+                        <label for="radio1">Sterburta</label>
                     </div>
                     <div>
-                        <input type="radio" name="radio" value="Sztag">
-                        <label for="radio">Sztag</label>
+                        <input type="radio" name="radio" id="radio2" value="Sztag">
+                        <label for="radio2">Sztag</label>
                     </div>
                     <div>
-                        <input type="radio" name="radio" value="Bakburta">
-                        <label for="radio">Bakburta</label>
+                        <input type="radio" name="radio" id="radio3" value="Bakburta">
+                        <label for="radio3">Bakburta</label>
                     </div>
                     <div>
                         <input style="display: none;" type="radio" name="radio" value="empty" checked>
                     </div>
                 </div>
                 <div class="input-range">
-                    <!-- <div> -->
                     <label class="question" for="range">Jaka jest maksymalna długość jachtu, którym można pływać bez
-                        patentu? (3 -
-                        11)</label>
+                        patentu? (3 - 11)</label>
                     <input type="range" id="range" name="range" min="3" max="11" step="0.5"
                         oninput="num.value = this.value">
-                    <output id="num">7</output>
-                    <!-- </div> -->
+                    <output id="num">4</output>
                 </div>
-                <div class="input-checkbox">
-                    <label class="question" for="input-checkbox">Które z tych nazw to nazwy żagli?</label>
+                <label class="question" for="input-checkbox">Które z tych nazw to nazwy żagli?</label>
+                <div id="input-checkbox">
                     <div>
-                        <input type="checkbox" name="checkbox" value="fok">
-                        <label for="checkbox">fok</label>
+                        <input type="checkbox" id="checkbox1" name="checkbox" value="fok">
+                        <label for="checkbox1">fok</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="checkbox" value="achterdek">
-                        <label for="checkbox">achterdek</label>
+                        <input type="checkbox" id="checkbox2" name="checkbox" value="achterdek">
+                        <label for="checkbox2">achterdek</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="checkbox" value="spinaker">
-                        <label for="checkbox">spinaker</label>
+                        <input type="checkbox" id="checkbox3" name="checkbox" value="spinaker">
+                        <label for="checkbox3">spinaker</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="checkbox" value="grot">
-                        <label for="checkbox">grot</label>
+                        <input type="checkbox" id="checkbox4" name="checkbox" value="grot">
+                        <label for="checkbox4">grot</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="checkbox" value="rumpel">
-                        <label for="checkbox">rumpel</label>
+                        <input type="checkbox" id="checkbox5" name="checkbox" value="rumpel">
+                        <label for="checkbox5">rumpel</label>
                     </div>
                 </div>
                 <div class="input-text">
                     <label class="question" for="input-text">Która z tych łódek jest większa? Omega czy Laser?</label>
                     <div>
-                        <input id="text" type="text">
+                        <input id="input-text" type="text">
                     </div>
                 </div>
                 <div class="clearfix">
@@ -112,11 +109,25 @@
                 <p>Twoj wynik to:</p>
                 <p>0/7</p>
             </div>
+            <section id="results-session">
+                <h3>Twoje wyniki w tej sesji <img src="img/down-arrow.png" alt="arrow"></h3>
+                <div>
+                    <p></p>
+                </div>
+            </section>
+            <section id="results-local">
+                <h3>Twoje wyniki ogólnie <img src="img/down-arrow.png" alt="arrow"></h3>
+                <div>
+                    <p></p>
+                </div>
+            </section>
         </main>
         <footer>
             <p>Marcin Jarczewski &copy; Informatyka grupa 2 2021</p>
             <div class="attribution">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
                     href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/th-studio" title="th studio">th studio</a> from
+                <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
             <a href="#">Powrót na górę</a>
         </footer>
     </div>
