@@ -1,51 +1,77 @@
+// DODAC ANIMACJE W STYLES.CSS !!!!!!!!!!!!!
+// ========================================================================================
+
+// jesli JS jest wylaczony to wywietl brak dostepu do wynikow, wlacz JS
+// ========================================================================================
+// ingerencja w CSS 
+// zaznaczenie najlepszego wyniku !!!
+// ========================================================================================
+// createChild OK
+// jak nacisne, to pokaza mi sie wszystkie wyniki z localStorage, kazdy w innym kontenerze (p lub div)
+// jak nacisne, to pokaza mi sie wszystkie wyniki z SessionStorage, kazdy w innym kontenerze (p lub div)
+// ========================================================================================
+// Inne -> pod tabela więcej zdjęć z Jquery TABS
+// bez JS wyswietlanie zdjeć w borderach tak jak na stronie głównej
+
 document.addEventListener('DOMContentLoaded', () => {
-    // jesli JS jest wylaczony to wywietl brak dostepu do wynikow, wlacz JS
-    document.querySelector('#results-local').onclick(function(p) {
-        // jak nacisne, to pokaza mi sie wszystkie wyniki z localStorage, kazdy w innym kontenerze (p lub div)
-    });
-    document.querySelector('#results-local').onclick(function(p) {
-        // jak nacisne, to pokaza mi sie wszystkie wyniki z SessionStorage, kazdy w innym kontenerze (p lub div)
-    });
+    document.querySelector('#results-local').onclick;
+    document.querySelector('#results-local').onclick;
 });
 
 $(document).ready(function () {
-    $(function () {
-        $("#dialog").dialog({
-            autoOpen: false,
-            buttons: {
-                'Zamknij': function () {
-                    $(this).dialog("close");
-                },
-                'Zapisz wynik': function () {
-                    $(this).dialog("close");
-                }
+    $("#dialog").dialog({
+        autoOpen: false,
+        buttons: {
+            'Zamknij': function () {
+                $(this).dialog("close");
+            },
+            'Zapisz wynik': function () {
+                $(this).dialog("close");
             }
+        }
+    });
+    $("#submit").click(function () {
+        // console.log('==========================================');
+        let sail = [];
+        $("input:checkbox[name=checkbox]:checked").each(function () {
+            sail.push($(this).val());
         });
-        $("#submit").click(function (e) {
-            let sail = document.querySelectorAll('input[name="checkbox"]:checked');
-            let color = document.querySelector('#color').value;
-            let radio = document.querySelector('input[name="radio"]:checked').value;
-            let len = document.querySelector('#range').value;
-            let boat = document.querySelector('#text').value.toLowerCase();
+        let color = $('#color').val();
+        let radio = $('input[name="radio"]:checked').val();
+        let len = $('#range').val();
+        let boat = $('#XD')[0].value.toLowerCase();
 
-            let points = 0;
+        // console.log(`boat = ${boat}`);
+        // console.log(`radio = ${radio}`);
+        // console.log(`len = ${len}`);
 
-            if (color === 'white')
-                points++;
-            if (radio === 'Bakburta')
-                points++;
-            if (len === 7.5)
-                points++;
-            if (sail.includes('fok'))
-                points++;
-            if (sail.includes('spinaker'))
-                points++;
-            if (sail.includes('grot'))
-                points++;
+        let points = 0;
 
-            $('#dialog p').text = (`${points}/0`);
-            e.preventDefault();
-            $("#dialog").dialog("open");
-        });
+        if (color === 'white') {
+            points++;
+        }
+        if (radio === 'bakburta') {
+            points++;
+        }
+        if (len == 7.5) {
+            points++;
+        }
+        if (sail.includes('fok')) {
+            points++;
+        }
+        if (sail.includes('spinaker')) {
+            points++;
+        }
+        if (sail.includes('grot')) {
+            points++;
+        }
+        if(boat === 'omega')
+            points++;
+
+        console.log(points);
+
+        $("#dialog-result").text(`${points}/7`);
+        $("#dialog").dialog("open");
+        return false;
     });
 });
