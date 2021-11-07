@@ -6,7 +6,7 @@
 // ingerencja w CSS 
 // zaznaczenie najlepszego wyniku !!!
 // ========================================================================================
-// createChild OK
+// createChild
 // jak nacisne, to pokaza mi sie wszystkie wyniki z localStorage, kazdy w innym kontenerze (p lub div)
 // jak nacisne, to pokaza mi sie wszystkie wyniki z SessionStorage, kazdy w innym kontenerze (p lub div)
 // ========================================================================================
@@ -14,8 +14,45 @@
 // bez JS wyswietlanie zdjeć w borderach tak jak na stronie głównej
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('#results-local').onclick;
-    document.querySelector('#results-local').onclick;
+
+    function addParagrapgh(where) {
+        let p = document.createElement("P");
+        p.innerHTML = "Brak wyników. Rozwiąż quiz!"
+        let div = document.querySelector(where);
+        div.appendChild(p);
+    }
+
+    document.querySelector('#quiz').onclick = () => {};
+    document.querySelector('#results-session button').onclick = () => {
+        console.log('==================================================');
+        let results = localStorage.getItem("results");
+        console.log(`session results = ${results}`);
+        if (document.querySelector('#results-session div p') === null) {
+            addParagrapgh('#results-session div');
+        } else {
+            results = JSON.parse(results);
+            for (let i = 0; i < results.length; i++) {
+                console.log(`i = ${i} session res = ${results[i]}`);
+            }
+        }
+    };
+
+
+
+    document.querySelector('#results-local button').onclick = () => {
+        console.log('==================================================');
+        // document.querySelector('#results-local').style.height = "100%";
+        let results = localStorage.getItem("results");
+        console.log(`local results = ${results}`);
+        if (document.querySelector('#results-local div p') === null) {
+            addParagrapgh('#results-local div');
+        } else {
+            results = JSON.parse(results);
+            for (let i = 0; i < results.length; i++) {
+                console.log(`i = ${i} local res = ${results[i]}`);
+            }
+        }
+    }
 });
 
 $(document).ready(function () {
@@ -25,7 +62,12 @@ $(document).ready(function () {
             'Zamknij': function () {
                 $(this).dialog("close");
             },
-            'Zapisz wynik': function () {
+            'Zapisz wynik': function() {
+                const points = $(this).data('points');
+                console.log(points);
+                const results = localStorage.getItem("results");
+                console.log(results);
+                // localStorage.setItem("results", JSON.stringify(myJSON));
                 $(this).dialog("close");
             }
         }
@@ -33,17 +75,15 @@ $(document).ready(function () {
     $("#submit").click(function () {
         // console.log('==========================================');
         let sail = [];
+        
         $("input:checkbox[name=checkbox]:checked").each(function () {
             sail.push($(this).val());
         });
+
         let color = $('#color').val();
         let radio = $('input[name="radio"]:checked').val();
         let len = $('#range').val();
         let boat = $('#XD')[0].value.toLowerCase();
-
-        // console.log(`boat = ${boat}`);
-        // console.log(`radio = ${radio}`);
-        // console.log(`len = ${len}`);
 
         let points = 0;
 
@@ -65,13 +105,12 @@ $(document).ready(function () {
         if (sail.includes('grot')) {
             points++;
         }
-        if(boat === 'omega')
+        if (boat === 'omega')
             points++;
 
-        console.log(points);
-
+        // console.log(points);
         $("#dialog-result").text(`${points}/7`);
-        $("#dialog").dialog("open");
+        $("#dialog").data('points', points).dialog("open");
         return false;
     });
 });

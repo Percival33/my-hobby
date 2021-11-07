@@ -323,6 +323,12 @@ tbody tr:hover td a {
     background-color: #036873;
 }
 
+#results-session h3 button, #results-local h3 button {
+    outline: none;
+    border: none;
+    background-color: #036873;
+}
+
 @media (max-width: 1024px) {
     html {
         font-size: 19px;

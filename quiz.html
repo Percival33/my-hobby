@@ -32,93 +32,93 @@
 
         </nav>
         <main>
-            <h3>Sprawdź swoją wiedzę o żeglarstwie!</h3>
-            <form id="quiz">
-                <div class="select">
-                    <h4 class="question">Jaki kolor mają żagle?</h4>
-                    <div>
-                        <select name="select" id="color">
-                            <option value="black">czarny</option>
-                            <option value="white">biały</option>
-                            <option value="yellow">żółty</option>
-                            <option value="red">czerwony</option>
-                        </select>
+            <section id="quiz">
+                <h3>Sprawdź swoją wiedzę o żeglarstwie! <img src="img/down-arrow.png" alt="arrow"></h3>
+                <form>
+                    <div class="select">
+                        <h4 class="question">Jaki kolor mają żagle?</h4>
+                        <div>
+                            <select name="select" id="color">
+                                <option value="black">czarny</option>
+                                <option value="white">biały</option>
+                                <option value="yellow">żółty</option>
+                                <option value="red">czerwony</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div id="input-radio">
-                    <h4 class="question">Lewa burta jachtu to:</h4>
-                    <div>
-                        <input type="radio" name="radio" id="radio1" value="Sterburta">
-                        <label for="radio1">Sterburta</label>
+                    <div id="input-radio">
+                        <h4 class="question">Lewa burta jachtu to:</h4>
+                        <div>
+                            <input type="radio" name="radio" id="radio1" value="Sterburta">
+                            <label for="radio1">Sterburta</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="radio" id="radio2" value="Sztag">
+                            <label for="radio2">Sztag</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="radio" id="radio3" value="bakburta">
+                            <label for="radio3">Bakburta</label>
+                        </div>
+                        <div>
+                            <input style="display: none;" type="radio" name="radio" value="empty" checked>
+                        </div>
                     </div>
-                    <div>
-                        <input type="radio" name="radio" id="radio2" value="Sztag">
-                        <label for="radio2">Sztag</label>
+                    <div class="input-range">
+                        <h4 class="question">Jaka jest maksymalna długość jachtu, którym można pływać bez
+                            patentu? (3 - 11)</h4>
+                        <input type="range" id="range" name="range" min="3" max="11" step="0.5"
+                            oninput="num.value = this.value">
+                        <output id="num">7</output>
                     </div>
-                    <div>
-                        <input type="radio" name="radio" id="radio3" value="bakburta">
-                        <label for="radio3">Bakburta</label>
+                    <div id="input-checkbox">
+                        <h4 class="question">Które z tych nazw to nazwy żagli?</h4>
+                        <div>
+                            <input type="checkbox" id="checkbox1" name="checkbox" value="fok">
+                            <label for="checkbox1">fok</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox2" name="checkbox" value="achterdek">
+                            <label for="checkbox2">achterdek</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox3" name="checkbox" value="spinaker">
+                            <label for="checkbox3">spinaker</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox4" name="checkbox" value="grot">
+                            <label for="checkbox4">grot</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox5" name="checkbox" value="rumpel">
+                            <label for="checkbox5">rumpel</label>
+                        </div>
                     </div>
-                    <div>
-                        <input style="display: none;" type="radio" name="radio" value="empty" checked>
+                    <div class="input-text">
+                        <h4 class="question">Która z tych łódek jest większa? Omega czy Laser?</h4>
+                        <div>
+                            <input type="text" id="XD">
+                        </div>
                     </div>
-                </div>
-                <div class="input-range">
-                    <h4 class="question">Jaka jest maksymalna długość jachtu, którym można pływać bez
-                        patentu? (3 - 11)</h4>
-                    <input type="range" id="range" name="range" min="3" max="11" step="0.5"
-                        oninput="num.value = this.value">
-                    <output id="num">7</output>
-                </div>
-                <div id="input-checkbox">
-                    <h4 class="question">Które z tych nazw to nazwy żagli?</h4>
-                    <div>
-                        <input type="checkbox" id="checkbox1" name="checkbox" value="fok">
-                        <label for="checkbox1">fok</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="checkbox2" name="checkbox" value="achterdek">
-                        <label for="checkbox2">achterdek</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="checkbox3" name="checkbox" value="spinaker">
-                        <label for="checkbox3">spinaker</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="checkbox4" name="checkbox" value="grot">
-                        <label for="checkbox4">grot</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="checkbox5" name="checkbox" value="rumpel">
-                        <label for="checkbox5">rumpel</label>
-                    </div>
-                </div>
-                <div class="input-text">
-                    <h4 class="question">Która z tych łódek jest większa? Omega czy Laser?</h4>
-                    <div>
-                        <input type="text" id="XD">
-                    </div>
-                </div>
-                <div class="clearfix">
+                    <div class="clearfix">
 
-                    <input class="btn" id="submit" type="button" value="Sprawdź odpowiedzi">
-                    <input class="btn reset" type="reset" value="Usuń odpowiedzi">
-                </div>
-            </form>
+                        <input class="btn" id="submit" type="button" value="Sprawdź odpowiedzi">
+                        <input class="btn reset" type="reset" value="Usuń odpowiedzi">
+                    </div>
+                </form>
+            </section>
             <div id="dialog" title="Twój wynik">
                 <p>Twoj wynik to:</p>
                 <p id="dialog-result">-1/7</p>
             </div>
             <section id="results-session">
-                <h3>Twoje wyniki w tej sesji <img src="img/down-arrow.png" alt="arrow"></h3>
+                <h3>Twoje wyniki w tej sesji <button><img src="img/down-arrow.png" alt="arrow"></button></h3>
                 <div>
-                    <p></p>
                 </div>
             </section>
             <section id="results-local">
-                <h3>Twoje wyniki ogólnie <img src="img/down-arrow.png" alt="arrow"></h3>
+                <h3>Twoje wyniki ogólnie <button><img src="img/down-arrow.png" alt="arrow"></button></h3>
                 <div>
-                    <p></p>
                 </div>
             </section>
         </main>
