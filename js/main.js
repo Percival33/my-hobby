@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const results = getSessionResults();
             for (let i = 0; i < results.length; i++) {
                 // console.log(`i = ${i} session res = ${results[i]}`);
-                addParagrapgh('#results-session div', results[i]);
+                addParagrapgh('#results-session div', `Próba nr ${i+1}: ${results[i]}/7 punktów`);
             }
         }
     };
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const results = getLocalResults();
             for (let i = 0; i < results.length; i++) {
                 // console.log(`i = ${i} session res = ${results[i]}`);
-                addParagrapgh('#results-local div', results[i]);
+                addParagrapgh('#results-local div', `Próba nr ${i+1}: ${results[i]}/7 punktów`);
             }
         }
     }

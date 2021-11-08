@@ -343,10 +343,13 @@ p#dialog-result {
 
 
 .ui-widget {
-    background-color: #f2f2f2;
+    background-color: #959FA6;
     color: #000;
 }
 
+.ui-dialog-titlebar-close{
+    display: none;
+}
 #results-session h3 button, #results-local h3 button {
     outline: none;
     border: none;
