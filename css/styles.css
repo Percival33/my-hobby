@@ -301,17 +301,22 @@ tbody tr:hover td a {
         background-color: #f2f2f2;
     }
 
-    25% {}
-    75% {}
-    
+    25% {
+        background-color: #A2BABF;
+    }
+    50% {
+        background-color: #1E5C6A;
+    }
+    75% {
+        background-color: #045A6B;
+    }
     100% {
-        background-color: #022931;
+        background-color: #034959;
         color: #f2f2f2;
     }
 }
 
 .ui-widget-header,
-.ui-state-default,
 .ui-button {
     background: #036873;
     border: 1px solid #bf2c38;
@@ -343,13 +348,19 @@ p#dialog-result {
 
 
 .ui-widget {
-    background-color: #959FA6;
+    background-color: #F2F2DA;
     color: #000;
+}
+
+.ui-tabs-anchor {
+    border: 1px solid #1E5C6A;
+    color: #f2f2f2;
 }
 
 .ui-dialog-titlebar-close{
     display: none;
 }
+
 #results-session h3 button, #results-local h3 button {
     outline: none;
     border: none;

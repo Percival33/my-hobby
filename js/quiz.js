@@ -1,21 +1,9 @@
-// DODAC ANIMACJE W STYLES.CSS !!!!!!!!!!!!!
-// ========================================================================================
-
-// jesli JS jest wylaczony to wywietl brak dostepu do wynikow, wlacz JS
-// ========================================================================================
 // ingerencja w CSS 
 // zaznaczenie najlepszego wyniku !!!
-// ========================================================================================
-// createChild
-// jak nacisne, to pokaza mi sie wszystkie wyniki z localStorage, kazdy w innym kontenerze (p lub div)
-// jak nacisne, to pokaza mi sie wszystkie wyniki z SessionStorage, kazdy w innym kontenerze (p lub div)
-// ========================================================================================
-// Inne -> pod tabela więcej zdjęć z Jquery TABS
-// bez JS wyswietlanie zdjeć w borderach tak jak na stronie głównej
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    function addParagrapgh(where, text) {
+    addParagrapgh = (where, text) => {
         let p = document.createElement("P");
         p.innerHTML = text;
         let div = document.querySelector(where);
@@ -54,43 +42,67 @@ document.addEventListener('DOMContentLoaded', () => {
         }));
     }
 
-    document.querySelector('#quiz').onclick = () => {};
+    // document.querySelector('#quiz').onclick = () => {};
 
     document.querySelector('#results-session button').onclick = () => {
         console.log('==================================================');
         const paragraps = document.querySelectorAll('#results-session div p');
-    
+
         if (paragraps.length === 0 && getSessionResults().length === 0) {
             addParagrapgh('#results-session div', 'Brak wyników. Rozwiąż quiz!');
-        } else if(getSessionResults().length > 0) {
+        } else if (getSessionResults().length > 0) {
             let div = document.querySelector('#results-session div');
-            while(div.firstChild) {
+            while (div.firstChild) {
                 div.removeChild(div.firstChild);
             }
             const results = getSessionResults();
-            for (let i = 0; i < results.length; i++) {
-                // console.log(`i = ${i} session res = ${results[i]}`);
+            let max = -1;
+            for(let i = 0; i < results.length; i++) {
+                if(results[i] > max) {
+                    max = results[i];
+                }
                 addParagrapgh('#results-session div', `Próba nr ${i+1}: ${results[i]}/7 punktów`);
+            }
+
+            const p = document.querySelectorAll('#results-session div p');
+            for(let i = 0; i < p.length; i++) {
+                p[i].style.borderBottom = "1px solid #022931";
+                if(results[i] == max) {
+                    p[i].style.backgroundColor = "#022931";
+                    p[i].style.color = "#f2f2f2";
+                }
             }
         }
     };
 
     document.querySelector('#results-local button').onclick = () => {
-        // console.log('==================================================');
+        console.log('==================================================');
         const paragraps = document.querySelectorAll('#results-local div p');
-    
+        
         if (paragraps.length === 0 && getLocalResults().length === 0) {
             addParagrapgh('#results-local div', 'Brak wyników. Rozwiąż quiz i zapisz swój wynik!');
-        } else if(getLocalResults().length > 0) {
+        } else if (getLocalResults().length > 0) {
             let div = document.querySelector('#results-local div');
-            while(div.firstChild) {
+            while (div.firstChild) {
                 div.removeChild(div.firstChild);
             }
             const results = getLocalResults();
+            let max = -1;
             for (let i = 0; i < results.length; i++) {
-                // console.log(`i = ${i} session res = ${results[i]}`);
+                if(results[i] > max) {
+                    max = results[i];
+                }
                 addParagrapgh('#results-local div', `Próba nr ${i+1}: ${results[i]}/7 punktów`);
             }
+            const p = document.querySelectorAll('#results-local div p');
+            for(let i = 0; i < p.length; i++) {
+                p[i].style.borderBottom = "1px solid #022931";
+                if(results[i] == max) {
+                    p[i].style.backgroundColor = "#022931";
+                    p[i].style.color = "#f2f2f2";
+                }
+            }
+            // console.log(`local ${max}`);
         }
     }
 });
