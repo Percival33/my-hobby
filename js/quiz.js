@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const paragraps = document.querySelectorAll('#results-session div p');
 
         if (paragraps.length === 0 && getSessionResults().length === 0) {
-            addParagrapgh('#results-session div', 'Brak wyników. Rozwiąż quiz!');
+            addParagrapgh('#results-session div', 'Brak wyników w tej sesji. Rozwiąż quiz!');
         } else if (getSessionResults().length > 0) {
             let div = document.querySelector('#results-session div');
             while (div.firstChild) {
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             for(let i = 0; i < p.length; i++) {
                 p[i].style.borderBottom = "1px solid #022931";
                 if(results[i] == max) {
-                    p[i].style.backgroundColor = "#022931";
+                    p[i].style.backgroundColor = "#036873";
                     p[i].style.color = "#f2f2f2";
                 }
             }
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             for(let i = 0; i < p.length; i++) {
                 p[i].style.borderBottom = "1px solid #022931";
                 if(results[i] == max) {
-                    p[i].style.backgroundColor = "#022931";
+                    p[i].style.backgroundColor = "#036873";
                     p[i].style.color = "#f2f2f2";
                 }
             }
