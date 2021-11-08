@@ -361,6 +361,15 @@ p#dialog-result {
     display: none;
 }
 
+div.ui-tabs-panel.img-Tabs img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+div.ui-tabs-panel.img-Tabs p {
+    padding: 5px 20px;
+}
+
 #results-session h3 button, #results-local h3 button {
     outline: none;
     border: none;

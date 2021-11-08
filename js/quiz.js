@@ -123,11 +123,17 @@ $(document).ready(function () {
             },
             'Zapisz wynik': function () {
                 const points = $(this).data('points');
-                let arr = getLocalResults();
+                let arr = getSessionResults();
 
-                console.log(arr);
+                // console.log(arr);
                 arr.push(points);
-                setLocalResults(arr);
+                setSessionResults(arr);
+
+                let arr2 = getLocalResults();
+
+                // console.log(arr);
+                arr2.push(points);
+                setLocalResults(arr2);
 
                 $(this).dialog("close");
             }
