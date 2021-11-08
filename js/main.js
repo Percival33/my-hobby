@@ -22,10 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
         div.appendChild(p);
     }
 
-    // function getLocalResults() {
-    //     const obj = JSON.parse(localStorage.getItem('results'));
-    //     return obj;
-    // }
+    getLocalResults = () => {
+        const obj = JSON.parse(localStorage.getItem('results'));
+        // console.log(`${JSON.parse(obj)} obj`);
+        if (obj === null)
+            return JSON.parse(JSON.stringify({
+                "results": Array(0)
+            })).results;
+        return obj.results;
+    }
 
     getSessionResults = () => { // should always return an array
         const obj = JSON.parse(sessionStorage.getItem('results'));
@@ -37,9 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return obj.results;
     }
 
-    // function setLocalResults(data) {
-    //     localStorage.setItem('results', JSON.stringify(data));
-    // }
+    setLocalResults = (data) => {
+        localStorage.setItem('results', JSON.stringify({
+            "results": data
+        }));
+    }
 
     setSessionResults = (data) => { // gets an array
         sessionStorage.setItem('results', JSON.stringify({
@@ -52,15 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#results-session button').onclick = () => {
         console.log('==================================================');
         const paragraps = document.querySelectorAll('#results-session div p');
-        console.log(paragraps.length);
-        console.log(getSessionResults().length);
-
+    
         if (paragraps.length === 0 && getSessionResults().length === 0) {
             addParagrapgh('#results-session div', 'Brak wyników. Rozwiąż quiz!');
         } else if(getSessionResults().length > 0) {
             let div = document.querySelector('#results-session div');
-            for (let i = 0; i < paragraps.length; i++) {
-                div.removeChild(div.childNodes[i]);
+            while(div.firstChild) {
+                div.removeChild(div.firstChild);
             }
             const results = getSessionResults();
             for (let i = 0; i < results.length; i++) {
@@ -70,17 +75,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // document.querySelector('#results-local button').onclick = () => {
-    //     // console.log('==================================================');
-    //     if (document.querySelector('#results-local div p') === null) {
-    //         addParagrapgh('#results-local div');
-    //     } else {
-    //         const results = getLocalResults();
-    //         for (let i = 0; i < results.length; i++) {
-    //             console.log(`i = ${i} local res = ${results[i]}`);
-    //         }
-    //     }
-    // }
+    document.querySelector('#results-local button').onclick = () => {
+        // console.log('==================================================');
+        const paragraps = document.querySelectorAll('#results-local div p');
+    
+        if (paragraps.length === 0 && getLocalResults().length === 0) {
+            addParagrapgh('#results-local div', 'Brak wyników. Rozwiąż quiz i zapisz swój wynik!');
+        } else if(getLocalResults().length > 0) {
+            let div = document.querySelector('#results-local div');
+            while(div.firstChild) {
+                div.removeChild(div.firstChild);
+            }
+            const results = getLocalResults();
+            for (let i = 0; i < results.length; i++) {
+                // console.log(`i = ${i} session res = ${results[i]}`);
+                addParagrapgh('#results-local div', results[i]);
+            }
+        }
+    }
 });
 
 $(document).ready(function () {
@@ -99,21 +111,12 @@ $(document).ready(function () {
             },
             'Zapisz wynik': function () {
                 const points = $(this).data('points');
-                console.log(points);
+                let arr = getLocalResults();
 
+                console.log(arr);
+                arr.push(points);
+                setLocalResults(arr);
 
-                // if (!localStorage.getItem('results')) {
-                //     let obj = {
-                //         "results": [points]
-                //     }
-                //     localStorage.setItem('results', JSON.stringify(obj));
-                // } else {
-                //     const results = getLocalResults();
-                //     // console.log(obj);
-                //     results.push(points);
-                //     setLocalResults(results);
-
-                // }
                 $(this).dialog("close");
             }
         }

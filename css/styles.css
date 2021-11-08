@@ -313,14 +313,38 @@ tbody tr:hover td a {
 .ui-widget-header,
 .ui-state-default,
 .ui-button {
-    background: #b9cd6d;
-    border: 1px solid #b9cd6d;
+    background: #036873;
+    border: 1px solid #bf2c38;
     color: #FFFFFF;
     font-weight: bold;
 }
 
+.ui-button {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 5px 10px;
+}
+
+.ui-dialog-titlebar {
+    height: 30px;
+}
+
+.ui-dialog-titlebar-close {
+    height: 30px;
+    float: right;
+    overflow: hidden;
+    width: auto;
+    /* padding: 5px 10px; */
+}
+
+p#dialog-result {
+    text-align: center;
+}
+
+
 .ui-widget {
-    background-color: #036873;
+    background-color: #f2f2f2;
+    color: #000;
 }
 
 #results-session h3 button, #results-local h3 button {
