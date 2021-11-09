@@ -316,7 +316,9 @@ tbody tr:hover td a {
     }
 }
 
-
+div.tabs {
+    
+}
 
 #results-session h3 button, #results-local h3 button {
     outline: none;
