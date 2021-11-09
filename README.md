@@ -2,7 +2,16 @@
 Collage project to make website about my hobby, then add JS functionalities and host it on PHP server.
 
 ### TO DO
-- [ ] create HTML files
-- [ ] fill HTML with text content
-- [ ] add graphics
-- [ ] add css 
+- [x] create HTML files
+- [x] fill HTML with text content
+- [x] add graphics, css, js 
+- [ ] add XML related files
+- [ ] add XML Schema
+- [ ] create photo gallery on PHP
+- [ ] enable uploading pictures
+- [ ] add water mark to uploaded pictures
+- [ ] saving data to DB
+- [ ] registration and logging 
+- [ ] session mechanism
+- [ ] differiating users
+- [ ] search engine for pictures 
