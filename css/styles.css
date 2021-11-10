@@ -295,7 +295,8 @@ tbody tr:hover td a {
     color: #FF7884;
 }
 
-@keyframes animation { 
+@keyframes animation {
+
     /* dodac więcej klatek animacji */
     0% {
         background-color: #f2f2f2;
@@ -304,61 +305,37 @@ tbody tr:hover td a {
     25% {
         background-color: #A2BABF;
     }
+
     50% {
         background-color: #1E5C6A;
     }
+
     75% {
         background-color: #045A6B;
     }
+
     100% {
         background-color: #034959;
         color: #f2f2f2;
     }
 }
 
-.ui-widget-header,
-.ui-button {
-    background: #036873;
-    border: 1px solid #bf2c38;
-    color: #FFFFFF;
-    font-weight: bold;
-}
-
-.ui-button {
-    box-sizing: border-box;
-    width: 50%;
-    padding: 5px 10px;
-}
-
-.ui-dialog-titlebar {
-    height: 30px;
-}
-
-.ui-dialog-titlebar-close {
-    height: 30px;
-    float: right;
-    overflow: hidden;
-    width: auto;
-    /* padding: 5px 10px; */
-}
-
 p#dialog-result {
     text-align: center;
 }
 
-
-.ui-widget {
-    background-color: #F2F2DA;
-    color: #000;
-}
-
-.ui-tabs-anchor {
-    border: 1px solid #1E5C6A;
-    color: #f2f2f2;
-}
-
-.ui-dialog-titlebar-close{
+button.ui-dialog-titlebar-close {
     display: none;
+}
+
+button.ui-button {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#tabs li.ui-tabs-tab.ui-tab {
+    list-style:none;
+    border-bottom: 1px solid #f2f2f2;
 }
 
 div.ui-tabs-panel.img-Tabs img {
@@ -370,7 +347,13 @@ div.ui-tabs-panel.img-Tabs p {
     padding: 5px 20px;
 }
 
-#results-session h3 button, #results-local h3 button {
+#js-rotating {
+    color: #bf2c38;
+    font-weight: bold;
+}
+
+#results-session h3 button,
+#results-local h3 button {
     outline: none;
     border: none;
     background-color: #036873;
