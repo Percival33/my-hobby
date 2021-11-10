@@ -1,6 +1,3 @@
-// ingerencja w CSS 
-// zaznaczenie najlepszego wyniku !!!
-
 document.addEventListener('DOMContentLoaded', () => {
 
     addParagrapgh = (where, text) => {
@@ -42,9 +39,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }));
     }
 
+
+    styleMaxResult = (results, where) => {
+        let max = -1;
+        for(let i = 0; i < results.length; i++) {
+            if(results[i] > max) {
+                max = results[i];
+            }
+        }
+        const p = document.querySelectorAll(where);
+        for(let i = 0; i < p.length; i++) {
+            if(results[i] == max) {
+                p[i].style.backgroundColor = "#036873";
+                p[i].style.color = "#f2f2f2";
+            }
+        }
+    }
     // document.querySelector('#quiz').onclick = () => {};
 
-    document.querySelector('#results-session button').onclick = () => {
+    document.querySelector('#results-session .btn-result').onclick = () => {
+        const results = getSessionResults();
+        styleMaxResult(results, '#results-session div p');
+    }
+
+    document.querySelector('#results-local .btn-result').onclick = () => {
+        const results = getLocalResults();
+        styleMaxResult(results, '#results-local div p');
+    }
+
+    document.querySelector('#results-session .arrow').onclick = () => {
         console.log('==================================================');
         const paragraps = document.querySelectorAll('#results-session div p');
 
@@ -56,26 +79,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 div.removeChild(div.firstChild);
             }
             const results = getSessionResults();
-            let max = -1;
+            
             for(let i = 0; i < results.length; i++) {
-                if(results[i] > max) {
-                    max = results[i];
-                }
                 addParagrapgh('#results-session div', `Próba nr ${i+1}: ${results[i]}/7 punktów`);
             }
-
             const p = document.querySelectorAll('#results-session div p');
             for(let i = 0; i < p.length; i++) {
                 p[i].style.borderBottom = "1px solid #022931";
-                if(results[i] == max) {
-                    p[i].style.backgroundColor = "#036873";
-                    p[i].style.color = "#f2f2f2";
-                }
             }
         }
     };
 
-    document.querySelector('#results-local button').onclick = () => {
+    document.querySelector('#results-local .arrow').onclick = () => {
         console.log('==================================================');
         const paragraps = document.querySelectorAll('#results-local div p');
         
@@ -87,20 +102,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 div.removeChild(div.firstChild);
             }
             const results = getLocalResults();
-            let max = -1;
             for (let i = 0; i < results.length; i++) {
-                if(results[i] > max) {
-                    max = results[i];
-                }
                 addParagrapgh('#results-local div', `Próba nr ${i+1}: ${results[i]}/7 punktów`);
             }
             const p = document.querySelectorAll('#results-local div p');
             for(let i = 0; i < p.length; i++) {
                 p[i].style.borderBottom = "1px solid #022931";
-                if(results[i] == max) {
-                    p[i].style.backgroundColor = "#036873";
-                    p[i].style.color = "#f2f2f2";
-                }
             }
             // console.log(`local ${max}`);
         }
