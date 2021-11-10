@@ -342,6 +342,11 @@ div.ui-tabs-panel.img-Tabs p {
     padding: 5px 20px;
 }
 
+a.ui-tabs-anchor {
+    display: block;
+    padding: 10px 20px;
+}
+
 #js-rotating {
     color: #bf2c38;
     font-weight: bold;
