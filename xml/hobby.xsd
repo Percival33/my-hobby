@@ -1,39 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
 	
-	<xs:element name="hipertext">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="sailing" type="sailingType"/>
-				<xs:element name="sailing-type" type="sailing-typeType"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-
 	<xs:complexType name="sailingType">
 		<xs:sequence>
 			<xs:element name="definition" type="definitionType"/>
 			<xs:element name="types" type="typesType">
-				<xs:simpleType name="type" type="kindType" maxOccurs="unbounded"/>
 			</xs:element>
 		</xs:sequence>
-	</xs:complexType>
-		
-	<xs:complexType name="sailing-typeType">
-		<xs:sequence>
-			<xs:element name="description" type="definitionType"/>
-			<xs:element name="gallery" type="galleryType"/>
-			<xs:element name="boats">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="boat" type="boatType" maxOccurs="unbounded"/>	
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-		</xs:sequence>
-		<xs:attribute name="kind" type="kindType"/>
 	</xs:complexType>
 	
+	<xs:complexType name="typesType">
+		<xs:sequence>
+			<xs:element name="type" type="kindType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+			
 	<xs:simpleType name="kindType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="sport"/>
@@ -54,20 +35,35 @@
 	</xs:complexType>
 
 	<xs:complexType name="classType">
-		<xs:sequence>
-			<xs:element name="className" type="xs:string" maxOccurs="1"/>
-		</xs:sequence>
-		<xs:attribute name="weight" type="xs:decimal" use="required" />
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="weight" type="xs:decimal" use="required" />
+			</xs:extension>
+		</xs:simpleContent>
 	</xs:complexType>
 	
 	<xs:complexType name="boatType">
 		<xs:sequence>
 			<xs:element name="class" type="classType"/>
-			<xs:element name="crew" type="xs:integer"/>
+			<xs:element name="crew" type="crewType"/>
 			<xs:element name="link" type="adressType"/>
 		</xs:sequence>
 		<xs:attribute name="category" type="xs:string" />
 	</xs:complexType>
+	
+	<xs:complexType name="crewType">
+		<xs:simpleContent>
+			<xs:extension base="xs:integer">
+				<xs:attribute name="gender" type="genderType"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="genderType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="male|female|mixed|both"/>
+		</xs:restriction>
+	</xs:simpleType>
 
 	<xs:complexType name="imageType">
 		<xs:simpleContent>
@@ -80,9 +76,33 @@
 	<xs:complexType name="adressType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute name="source" type="xs:anyURI" use="required"/>
+				<xs:attribute name="src" type="xs:anyURI" use="required"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	
+	<xs:complexType name="sailing-typeType">
+		<xs:sequence>
+			<xs:element name="description" type="definitionType"/>
+			<xs:element name="gallery" type="galleryType"/>
+			<xs:element name="boats" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="boat" type="boatType" maxOccurs="unbounded"/>	
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="kind" type="kindType"/>
+	</xs:complexType>
+	
+	<xs:element name="hipertext">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sailing" type="sailingType"/>
+				<xs:element name="sailing-type" type="sailing-typeType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 	
 </xs:schema>
