@@ -13,10 +13,12 @@
 	<xs:complexType name="sailingType">
 		<xs:sequence>
 			<xs:element name="definition" type="definitionType"/>
-			<xs:element name="types" type="typesType"/>
+			<xs:element name="types" type="typesType">
+				<xs:simpleType name="type" type="kindType" maxOccurs="unbounded"/>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-
+		
 	<xs:complexType name="sailing-typeType">
 		<xs:sequence>
 			<xs:element name="description" type="definitionType"/>
@@ -29,18 +31,19 @@
 				</xs:complexType>
 			</xs:element>
 		</xs:sequence>
+		<xs:attribute name="kind" type="kindType"/>
 	</xs:complexType>
+	
+	<xs:simpleType name="kindType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="sport"/>
+			<xs:enumeration value="hobby"/>
+		</xs:restriction>
+	</xs:simpleType>
 
 	<xs:simpleType name="definitionType">
 		<xs:restriction base="xs:string">
 			<xs:minLength value="30"/>
-		</xs:restriction>
-	</xs:simpleType>
-
-	<xs:simpleType name="typesType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="sport"/>
-			<xs:enumeration value="hobby"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -50,16 +53,36 @@
 		</xs:sequence>
 	</xs:complexType>
 
+	<xs:complexType name="classType">
+		<xs:sequence>
+			<xs:element name="className" type="xs:string" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="weight" type="xs:decimal" use="required" />
+	</xs:complexType>
+	
 	<xs:complexType name="boatType">
 		<xs:sequence>
-			<xs:element name="class" type="xs:string"/>
+			<xs:element name="class" type="classType"/>
 			<xs:element name="crew" type="xs:integer"/>
-			<xs:element name="link" type="linkType"/>
+			<xs:element name="link" type="adressType"/>
 		</xs:sequence>
+		<xs:attribute name="category" type="xs:string" />
 	</xs:complexType>
 
-	<xs:simpleType name="imageType">
-		
-	</xs:simpleType>
+	<xs:complexType name="imageType">
+		<xs:simpleContent>
+			<xs:extension base="adressType">
+				<xs:attribute name="link" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="adressType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="source" type="xs:anyURI" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	
 </xs:schema>
