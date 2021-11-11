@@ -22,43 +22,43 @@
 			<image src="img/sailgp.jpg">Jacht klasy F50 na regatach z cyklu SailGP</image>
 		</gallery>
 		<boats>
-			<boat>
-				<class>470</class>
+			<boat category="olimpic">
+				<class weight="120">470</class>
 				<crew gender="both">2</crew>
 				<link src="https://pl.wikipedia.org/wiki/470_(jacht)">470 Wikipedia</link>
 			</boat>
-			<boat>
-				<class>49er</class>
+			<boat category="olimpic">
+				<class weight="94">49er</class>
 				<crew gender="male">2</crew>
 				<link src="https://pl.wikipedia.org/wiki/49er">49er Wikipedia</link>
 			</boat>
-			<boat>
-				<class>49erFX</class>
+			<boat category="olimpic">
+				<class weight="94">49erFX</class>
 				<crew gender="female">2</crew>
 				<link src="https://pl.wikipedia.org/wiki/49er">49erFX Wikipedia</link>
 			</boat>
-			<boat>
-				<class>Finn</class>
+			<boat category="olimpic">
+				<class weight="107">Finn</class>
 				<crew gender="male">1</crew>
 				<link src="https://pl.wikipedia.org/wiki/Finn_(jacht)">Finn Wikipedia</link>
 			</boat>
-			<boat>
-				<class>Laser Standard</class>
+			<boat category="olimpic">
+				<class weight="59">Laser Standard</class>
 				<crew gender="male">1</crew>
 				<link src="https://pl.wikipedia.org/wiki/Laser_(jacht)">Laser Standard Wikipedia</link>
 			</boat>
-			<boat>
-				<class>Laser Radial</class>
+			<boat category="olimpic">
+				<class weight="59">Laser Radial</class>
 				<crew gender="female">1</crew>
 				<link src="https://en.wikipedia.org/wiki/Laser_Radial">Laser Radial Wikipedia</link>
 			</boat>
-			<boat>
-				<class>RS:X</class>
+			<boat category="olimpic">
+				<class weight="15.5">RS:X</class>
 				<crew gender="both">1</crew>
 				<link src="https://pl.wikipedia.org/wiki/Windsurfing">RS:X Wikipedia</link>
 			</boat>
-			<boat>
-				<class>Nacra 17</class>
+			<boat category="olimpic">
+				<class weight="141">Nacra 17</class>
 				<crew gender="mixed">2</crew>
 				<link src="https://en.wikipedia.org/wiki/Nacra_17">Nacra 17 Wikipedia</link>
 			</boat>
