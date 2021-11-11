@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hipertext>
+	<sailing>
+		<definition>
+			Żeglarstwo – dyscyplina sportów wodnych, rodzaj turystyki lub rekreacji, a także forma szkoleń – zarówno dla późniejszych marynarzy, oficerów i kapitanów jednostek, jak i jako tzw. szkoła charakterów dla młodzieży. Żeglarstwo uprawiane jest na jednostkach pływających napędzanych siłą wiatru za pośrednictwem żagli.
+		</definition>
+		<types>
+			<type>sport</type>
+			<type>hobby</type>
+		</types>
+	</sailing>
+	<sailing-type kind="sport">
+		<description>
+			Skupia się na rywalizacji w zawodach, zwanych regatami, łodzi o podobnych parametrach. Zawody te polegają na przeprowadzeniu serii wyścigów, w których przynawane są punkty, zgodnie z zajętym miejscem w każdym biegu. Ten, kto ma sumarycznie najmniej punktów - wygrywa. Zawodnicy pływają po określonej trasie, przestrzegając licznych przepisów regatowych. Nie respektowanie ich, może skutkować karą do wykonania w trakcie wyścigu, bądź dyskwalifikacją z danego biegu. Wyróżnia się wiele klas jachtów sportowych. Od łódek dla najmłodszych np. Optymist po łódki olimpijskie lub nawet większe jednostki.
+		</description>
+		<gallery>
+			<image src="img/regaty.jpg">Start wyścigu na regatach</image>
+			<image src="img/trasa.jpg">Przykładowa trasa regatowa</image>
+			<image src="img/jury.jpg">Motorówka komisji sędziowskiej</image>
+			<image src="img/optimist.jpg">Łódka klasy optimist</image>
+			<image src="img/49er.jpg">Łódka klasy 49er</image>
+			<image src="img/sailgp.jpg">Jacht klasy F50 na regatach z cyklu SailGP</image>
+		</gallery>
+		<boats>
+			<boat>
+				<class>470</class>
+				<crew gender="both">2</crew>
+				<link src="https://pl.wikipedia.org/wiki/470_(jacht)">470 Wikipedia</link>
+			</boat>
+			<boat>
+				<class>49er</class>
+				<crew gender="male">2</crew>
+				<link src="https://pl.wikipedia.org/wiki/49er">49er Wikipedia</link>
+			</boat>
+			<boat>
+				<class>49erFX</class>
+				<crew gender="female">2</crew>
+				<link src="https://pl.wikipedia.org/wiki/49er">49erFX Wikipedia</link>
+			</boat>
+			<boat>
+				<class>Finn</class>
+				<crew gender="male">1</crew>
+				<link src="https://pl.wikipedia.org/wiki/Finn_(jacht)">Finn Wikipedia</link>
+			</boat>
+			<boat>
+				<class>Laser Standard</class>
+				<crew gender="male">1</crew>
+				<link src="https://pl.wikipedia.org/wiki/Laser_(jacht)">Laser Standard Wikipedia</link>
+			</boat>
+			<boat>
+				<class>Laser Radial</class>
+				<crew gender="female">1</crew>
+				<link src="https://en.wikipedia.org/wiki/Laser_Radial">Laser Radial Wikipedia</link>
+			</boat>
+			<boat>
+				<class>RS:X</class>
+				<crew gender="both">1</crew>
+				<link src="https://pl.wikipedia.org/wiki/Windsurfing">RS:X Wikipedia</link>
+			</boat>
+			<boat>
+				<class>Nacra 17</class>
+				<crew gender="mixed">2</crew>
+				<link src="https://en.wikipedia.org/wiki/Nacra_17">Nacra 17 Wikipedia</link>
+			</boat>
+		</boats>
+	</sailing-type>
+	<sailing-type kind="hobby">
+		<description>
+			W jachtach turystycznych, w przeciwieństwie do sportowych, dużą uwagę przykłada się do wygody i komfortu żeglugi w każdych warunkach. Na jachcie panują waruntki zbliżone do mieszkalnych, ponieważ zazwyczaj jest tam kuchnia gazowa, lodówka, zlew, oświetlenie i gniazdka elektryczne oraz rozkładane materace do spania. Na nowszych jednostkach spotyka się również ogrzewanie. Ponadto, w bezwietrznych warunkach, korzysta się z zamontowanych silników spalinowych. Łódki turystyczne mogą pomieścić od 4 aż do 10 osób na pokładzie.
+		</description>
+		<gallery>
+			<image src="antila-wnetrze.jpg">Zdjęcie wnętrza jachtu</image>
+			<image src="antila.jpg">Zdjęcie Antili 33</image>
+		</gallery>
+	</sailing-type>
+</hipertext>

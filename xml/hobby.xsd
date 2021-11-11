@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	
+	<xs:element name="hipertext">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sailing" type="sailingType"/>
+				<xs:element name="sailing-type" type="sailing-typeType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="sailingType">
+		<xs:sequence>
+			<xs:element name="definition" type="definitionType"/>
+			<xs:element name="types" type="typesType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="sailing-typeType">
+		<xs:sequence>
+			<xs:element name="description" type="definitionType"/>
+			<xs:element name="gallery" type="galleryType"/>
+			<xs:element name="boats">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="boat" type="boatType" maxOccurs="unbounded"/>	
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="definitionType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="typesType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="sport"/>
+			<xs:enumeration value="hobby"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="galleryType">
+		<xs:sequence>
+			<xs:element name="image" type="imageType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="boatType">
+		<xs:sequence>
+			<xs:element name="class" type="xs:string"/>
+			<xs:element name="crew" type="xs:integer"/>
+			<xs:element name="link" type="linkType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="imageType">
+		
+	</xs:simpleType>
+	
+</xs:schema>
