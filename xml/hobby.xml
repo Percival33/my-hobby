@@ -74,4 +74,16 @@
 			<image src="antila.jpg">Zdjęcie Antili 33</image>
 		</gallery>
 	</sailing-type>
+	<quiz>
+		<question>Jaki kolor mają żagle?</question>
+		<question>Lewa burta jachtu to</question>
+		<question>Jaka jest maksymalna długość jachty, którym można pływać bez patentu?</question>
+		<question>Które z tych nazw to nazwy żagli?</question>
+		<question>Która z tych łódek jest większa? Omega czy Laser?</question>
+	</quiz>
+	<results saved="yes">
+		<result>5</result>
+		<result>7</result>
+		<result>2</result>
+	</results>
 </hipertext>
