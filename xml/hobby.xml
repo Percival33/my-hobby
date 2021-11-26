@@ -63,6 +63,12 @@
 				<crew gender="mixed">2</crew>
 				<link src="https://en.wikipedia.org/wiki/Nacra_17">Nacra 17 Wikipedia</link>
 			</boat>
+			
+			<boat category="hobbyist">
+				<class weight="1800">Antila 24.4</class>
+				<crew limit="8">2</crew>
+				<link src="https://en.wikipedia.org/wiki/Nacra_17">Nacra 17 Wikipedia</link>
+			</boat>
 		</boats>
 	</sailing-type>
 	<sailing-type kind="hobby">
@@ -74,6 +80,14 @@
 			<image src="antila.jpg">Zdjęcie Antili 33</image>
 		</gallery>
 	</sailing-type>
+	<sailors>
+		<sailor>
+			<name>Mateusz</name>
+			<surname>Kusznierewicz</surname>
+			<nationality>Polish</nationality>
+			<birthDate>1975-04-29</birthDate>
+		</sailor>
+	</sailors>
 	<quiz>
 		<question>Jaki kolor mają żagle?</question>
 		<question>Lewa burta jachtu to</question>

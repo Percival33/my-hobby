@@ -48,13 +48,28 @@
 			<xs:element name="crew" type="crewType"/>
 			<xs:element name="link" type="adressType"/>
 		</xs:sequence>
-		<xs:attribute name="category" type="xs:string" />
+		<xs:attribute name="category">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="olimpic"/>
+					<xs:enumeration value="hobbyist"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
 	</xs:complexType>
 	
 	<xs:complexType name="crewType">
 		<xs:simpleContent>
 			<xs:extension base="xs:integer">
-				<xs:attribute name="gender" type="genderType"/>
+				<xs:attribute name="gender" type="genderType" default="mixed"/>
+				<xs:attribute name="limit" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:maxInclusive value="10"/>
+							<xs:minInclusive value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -95,12 +110,25 @@
 		</xs:sequence>
 		<xs:attribute name="kind" type="kindType"/>
 	</xs:complexType>
+
+	<xs:complexType name="sailorsType">
+		<xs:sequence>
+			<xs:element name="sailor" type="sailorType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="sailorType">
+		<xs:sequence>
+			<xs:group ref="sailorGroup"/>
+		</xs:sequence>
+	</xs:complexType>
 	
 	<xs:element name="hipertext">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="sailing" type="sailingType"/>
 				<xs:element name="sailing-type" type="sailing-typeType" maxOccurs="unbounded"/>
+				<xs:element name="sailors" type ="sailorsType"/>
 				<xs:element name="quiz" type="quizType" minOccurs="0" maxOccurs="1"/>
 				<xs:element name="results" type="resultsType" minOccurs="0" maxOccurs="1"/>
 			</xs:sequence>
@@ -138,5 +166,16 @@
 			<xs:maxInclusive value="7"/>
 		</xs:restriction>
 	</xs:simpleType>
+
+
+	<xs:group name="sailorGroup">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="surname" type="xs:string"/>
+			<xs:element name="nationality" type="xs:string"/>
+			<xs:element name="birthDate" type="xs:date"/>
+		</xs:sequence>
+	</xs:group>
+	
 	
 </xs:schema>
