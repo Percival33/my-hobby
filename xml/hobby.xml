@@ -86,6 +86,14 @@
 			<surname>Kusznierewicz</surname>
 			<nationality>Polish</nationality>
 			<birthDate>1975-04-29</birthDate>
+			<achievements>Olympic Champion World Championship European Championship</achievements>
+		</sailor>
+		<sailor>
+			<name>Agnieszka</name>
+			<surname>Skrzypulec</surname>
+			<nationality>Polish</nationality>
+			<birthDate>1989-06-03</birthDate>
+			<achievements>3rd on olympic games</achievements>
 		</sailor>
 	</sailors>
 	<quiz>
