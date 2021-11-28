@@ -184,6 +184,28 @@
 			<xs:maxLength value="20"/>
 		</xs:restriction>
 	</xs:simpleType>
+
+	<xs:simpleType name="timesOnOlimpicsIntType">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="timesOnOlimpicsStringType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="one"/>
+			<xs:enumeration value="two"/>
+			<xs:enumeration value="three"/>
+			<xs:enumeration value="four"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="timesOnOlimpicsType">
+		<xs:union memberTypes="timesOnOlimpicsStringType timesOnOlimpicsIntType"/>
+	</xs:simpleType>
 	
 	<xs:group name="sailorGroup">
 		<xs:sequence>
@@ -192,6 +214,7 @@
 			<xs:element name="nationality" type="xs:string"/>
 			<xs:element name="birthDate" type="xs:date"/>
 			<xs:element name="achievements" type="achievementList"/>
+			<xs:element name="timesOnOlimpics" type="timesOnOlimpicsType"/>
 			<xs:element name="Wikipedia" type="adressType" minOccurs="0"/>
 		</xs:sequence>
 	</xs:group>

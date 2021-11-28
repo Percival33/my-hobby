@@ -51,7 +51,7 @@ header h1 {
     padding: 0;
     top: 30%;
     width: 100vw;
-    animation: sides 20s infinite;
+    animation: sides 15s infinite;
     text-align: center;
 }
 
@@ -341,13 +341,13 @@ tbody tr:hover td a {
     background-color: #036873;
 }
 
-.img-Tabs {
-    padding: 50px 100px;
+.img-Tabs p{
+    display: inline-block;
+    width: 100%;
 }
 
-.img-Tabs img{
-    display: block;
-    max-width: 800px;
+#tabs .img-Tabs img{
+    width: 100%;
     margin: 0 auto;
 }
 

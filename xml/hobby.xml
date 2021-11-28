@@ -67,7 +67,7 @@
 			<boat category="hobbyist">
 				<class weight="1800">Antila 24.4</class>
 				<crew limit="8">2</crew>
-				<link src="https://en.wikipedia.org/wiki/Nacra_17">Nacra 17 Wikipedia</link>
+				<link src="https://www.antila-yachts.pl/">Antila 24</link>
 			</boat>
 		</boats>
 	</sailing-type>
@@ -87,6 +87,7 @@
 			<nationality>Polish</nationality>
 			<birthDate>1975-04-29</birthDate>
 			<achievements>Olympic Champion World Championship European Championship</achievements>
+			<timesOnOlimpics>3</timesOnOlimpics>
 			<Wikipedia src="https://pl.wikipedia.org/wiki/Mateusz_Kusznierewicz">Wikipedia</Wikipedia>
 		</sailor>
 		<sailor>
@@ -95,6 +96,7 @@
 			<nationality>Polish</nationality>
 			<birthDate>1989-06-03</birthDate>
 			<achievements>3rd on olympic games</achievements>
+			<timesOnOlimpics>3</timesOnOlimpics>
 		</sailor>
 	</sailors>
 	<quiz>
