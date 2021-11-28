@@ -141,9 +141,16 @@
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:complexType name="questionSectionType">
+		<xs:choice>
+			<xs:element name="question" type="questionType"/>
+			<xs:element name="answer" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
+
 	<xs:complexType name="quizType">
 		<xs:sequence>
-			<xs:element name="question" type="questionType" maxOccurs="unbounded"/>
+			<xs:element name="questionSection" type="questionSectionType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -185,6 +192,7 @@
 			<xs:element name="nationality" type="xs:string"/>
 			<xs:element name="birthDate" type="xs:date"/>
 			<xs:element name="achievements" type="achievementList"/>
+			<xs:element name="Wikipedia" type="adressType" minOccurs="0"/>
 		</xs:sequence>
 	</xs:group>
 	

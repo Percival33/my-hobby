@@ -87,6 +87,7 @@
 			<nationality>Polish</nationality>
 			<birthDate>1975-04-29</birthDate>
 			<achievements>Olympic Champion World Championship European Championship</achievements>
+			<Wikipedia src="https://pl.wikipedia.org/wiki/Mateusz_Kusznierewicz">Wikipedia</Wikipedia>
 		</sailor>
 		<sailor>
 			<name>Agnieszka</name>
@@ -97,11 +98,36 @@
 		</sailor>
 	</sailors>
 	<quiz>
-		<question>Jaki kolor mają żagle?</question>
-		<question>Lewa burta jachtu to</question>
-		<question>Jaka jest maksymalna długość jachty, którym można pływać bez patentu?</question>
-		<question>Które z tych nazw to nazwy żagli?</question>
-		<question>Która z tych łódek jest większa? Omega czy Laser?</question>
+		<questionSection>
+			<question>Jaki kolor mają żagle?</question>
+		</questionSection>
+		<questionSection>
+			<answer>Biały</answer>
+		</questionSection>
+		<questionSection>
+			<question>Lewa burta jachtu to</question>
+		</questionSection>
+		<questionSection>
+			<answer>Bakburta</answer>
+		</questionSection>
+		<questionSection>
+			<question>Jaka jest maksymalna długość jachty, którym można pływać bez patentu?</question>
+		</questionSection>
+		<questionSection>
+			<answer>7,5m</answer>
+		</questionSection>
+		<questionSection>
+			<question>Które z tych nazw to nazwy żagli?</question>
+		</questionSection>
+		<questionSection>
+			<answer>Fok,Grot,Spinaker</answer>
+		</questionSection>
+		<questionSection>
+			<question>Która z tych łódek jest większa? Omega czy Laser?</question>
+		</questionSection>
+		<questionSection>
+			<answer>Omega</answer>
+		</questionSection>
 	</quiz>
 	<results saved="yes">
 		<result>5</result>
