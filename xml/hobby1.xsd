@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="hipertext">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sailing">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="definition" type="xs:string" />
+							<xs:element name="types">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" name="type" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" name="sailing-type">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="description" type="xs:string" />
+							<xs:element name="gallery">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" name="image">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="src" type="xs:string" use="required" />
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="boats">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" name="boat">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="class">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:string">
+																	<xs:attribute name="weight" type="xs:decimal" use="required" />
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="crew">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:unsignedByte">
+																	<xs:attribute name="gender" type="xs:string" use="optional" />
+																	<xs:attribute name="limit" type="xs:unsignedByte" use="optional" />
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="link">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:string">
+																	<xs:attribute name="src" type="xs:string" use="required" />
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="category" type="xs:string" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="kind" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="sailors">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="sailor">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="name" type="xs:string" />
+										<xs:element name="surname" type="xs:string" />
+										<xs:element name="nationality" type="xs:string" />
+										<xs:element name="birthDate" type="xs:date" />
+										<xs:element name="achievements" type="xs:string" />
+										<xs:element name="timesOnOlimpics" type="xs:unsignedByte" />
+										<xs:element minOccurs="0" name="Wikipedia">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="src" type="xs:string" use="required" />
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="quiz">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="questionSection">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="answer" type="xs:string" />
+										<xs:element minOccurs="0" name="question" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="results">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="result" type="xs:unsignedByte" />
+						</xs:sequence>
+						<xs:attribute name="saved" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

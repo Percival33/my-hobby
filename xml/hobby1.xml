@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hipertext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="hobby.xsd">
+	<sailing>
+		<definition>
+			Żeglarstwo – dyscyplina sportów wodnych, rodzaj turystyki lub rekreacji, a także forma szkoleń – zarówno dla późniejszych marynarzy, oficerów i kapitanów jednostek, jak i jako tzw. szkoła charakterów dla młodzieży. Żeglarstwo uprawiane jest na jednostkach pływających napędzanych siłą wiatru za pośrednictwem żagli.
+		</definition>
+		<types>
+			<type>sport</type>
+			<type>hobby</type>
+		</types>
+	</sailing>
+	<sailing-type kind="sport">
+		<description>
+			Skupia się na rywalizacji w zawodach, zwanych regatami, łodzi o podobnych parametrach. Zawody te polegają na przeprowadzeniu serii wyścigów, w których przynawane są punkty, zgodnie z zajętym miejscem w każdym biegu. Ten, kto ma sumarycznie najmniej punktów - wygrywa. Zawodnicy pływają po określonej trasie, przestrzegając licznych przepisów regatowych. Nie respektowanie ich, może skutkować karą do wykonania w trakcie wyścigu, bądź dyskwalifikacją z danego biegu. Wyróżnia się wiele klas jachtów sportowych. Od łódek dla najmłodszych np. Optymist po łódki olimpijskie lub nawet większe jednostki.
+		</description>
+		<gallery>
+			<image src="img/regaty.jpg">Start wyścigu na regatach</image>
+			<image src="img/trasa.jpg">Przykładowa trasa regatowa</image>
+			<image src="img/jury.jpg">Motorówka komisji sędziowskiej</image>
+			<image src="img/optimist.jpg">Łódka klasy optimist</image>
+			<image src="img/49er.jpg">Łódka klasy 49er</image>
+			<image src="img/sailgp.jpg">Jacht klasy F50 na regatach z cyklu SailGP</image>
+		</gallery>
+		<boats>
+			<boat category="olimpic">
+				<class weight="120">470</class>
+				<crew gender="both">2</crew>
+				<link src="https://pl.wikipedia.org/wiki/470_(jacht)">470 Wikipedia</link>
+			</boat>
+			<boat category="olimpic">
+				<class weight="94">49er</class>
+				<crew gender="male">2</crew>
+				<link src="https://pl.wikipedia.org/wiki/49er">49er Wikipedia</link>
+			</boat>
+			<boat category="olimpic">
+				<class weight="94">49erFX</class>
+				<crew gender="female">2</crew>
+				<link src="https://pl.wikipedia.org/wiki/49er">49erFX Wikipedia</link>
+			</boat>
+			<boat category="olimpic">
+				<class weight="107">Finn</class>
+				<crew gender="male">1</crew>
+				<link src="https://pl.wikipedia.org/wiki/Finn_(jacht)">Finn Wikipedia</link>
+			</boat>
+			<boat category="olimpic">
+				<class weight="59">Laser Standard</class>
+				<crew gender="male">1</crew>
+				<link src="https://pl.wikipedia.org/wiki/Laser_(jacht)">Laser Standard Wikipedia</link>
+			</boat>
+			<boat category="olimpic">
+				<class weight="59">Laser Radial</class>
+				<crew gender="female">1</crew>
+				<link src="https://en.wikipedia.org/wiki/Laser_Radial">Laser Radial Wikipedia</link>
+			</boat>
+			<boat category="olimpic">
+				<class weight="15.5">RS:X</class>
+				<crew gender="both">1</crew>
+				<link src="https://pl.wikipedia.org/wiki/Windsurfing">RS:X Wikipedia</link>
+			</boat>
+			<boat category="olimpic">
+				<class weight="141">Nacra 17</class>
+				<crew gender="mixed">2</crew>
+				<link src="https://en.wikipedia.org/wiki/Nacra_17">Nacra 17 Wikipedia</link>
+			</boat>
+			
+			<boat category="hobbyist">
+				<class weight="1800">Antila 24.4</class>
+				<crew limit="8">2</crew>
+				<link src="https://www.antila-yachts.pl/">Antila 24</link>
+			</boat>
+		</boats>
+	</sailing-type>
+	<sailing-type kind="hobby">
+		<description>
+			W jachtach turystycznych, w przeciwieństwie do sportowych, dużą uwagę przykłada się do wygody i komfortu żeglugi w każdych warunkach. Na jachcie panują waruntki zbliżone do mieszkalnych, ponieważ zazwyczaj jest tam kuchnia gazowa, lodówka, zlew, oświetlenie i gniazdka elektryczne oraz rozkładane materace do spania. Na nowszych jednostkach spotyka się również ogrzewanie. Ponadto, w bezwietrznych warunkach, korzysta się z zamontowanych silników spalinowych. Łódki turystyczne mogą pomieścić od 4 aż do 10 osób na pokładzie.
+		</description>
+		<gallery>
+			<image src="antila-wnetrze.jpg">Zdjęcie wnętrza jachtu</image>
+			<image src="antila.jpg">Zdjęcie Antili 33</image>
+		</gallery>
+	</sailing-type>
+	<sailors>
+		<sailor>
+			<name>Mateusz</name>
+			<surname>Kusznierewicz</surname>
+			<nationality>Polish</nationality>
+			<birthDate>1975-04-29</birthDate>
+			<achievements>Olympic Champion World Championship European Championship</achievements>
+			<timesOnOlimpics>3</timesOnOlimpics>
+			<Wikipedia src="https://pl.wikipedia.org/wiki/Mateusz_Kusznierewicz">Wikipedia</Wikipedia>
+		</sailor>
+		<sailor>
+			<name>Agnieszka</name>
+			<surname>Skrzypulec</surname>
+			<nationality>Polish</nationality>
+			<birthDate>1989-06-03</birthDate>
+			<achievements>3rd on olympic games</achievements>
+			<timesOnOlimpics>3</timesOnOlimpics>
+		</sailor>
+	</sailors>
+	<quiz>
+		<questionSection>
+			<question>Jaki kolor mają żagle?</question>
+		</questionSection>
+		<questionSection>
+			<answer>Biały</answer>
+		</questionSection>
+		<questionSection>
+			<question>Lewa burta jachtu to</question>
+		</questionSection>
+		<questionSection>
+			<answer>Bakburta</answer>
+		</questionSection>
+		<questionSection>
+			<question>Jaka jest maksymalna długość jachty, którym można pływać bez patentu?</question>
+		</questionSection>
+		<questionSection>
+			<answer>7,5m</answer>
+		</questionSection>
+		<questionSection>
+			<question>Które z tych nazw to nazwy żagli?</question>
+		</questionSection>
+		<questionSection>
+			<answer>Fok,Grot,Spinaker</answer>
+		</questionSection>
+		<questionSection>
+			<question>Która z tych łódek jest większa? Omega czy Laser?</question>
+		</questionSection>
+		<questionSection>
+			<answer>Omega</answer>
+		</questionSection>
+	</quiz>
+	<results saved="yes">
+		<result>5</result>
+		<result>7</result>
+		<result>2</result>
+	</results>
+</hipertext>
