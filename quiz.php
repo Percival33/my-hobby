@@ -24,7 +24,7 @@
             <a href="index.php#hobby">Żeglarstwo turystyczne</a>
           </div>
         </div>
-        <div class="sub-nav"><a href="pictures.php">Inne</a></div>
+        <div class="sub-nav"><a href="pictures.php">Galeria zdjęć</a></div>
         <div class="sub-nav active"><a href="quiz.php">Quiz</a></div>
       </nav>
       <main>
