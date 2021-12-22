@@ -20,12 +20,12 @@
         <div class="sub-nav">
           <a href="index.php">Strona główna</a>
           <div class="sub-nav-alt">
-            <a href="index.php#sport">Żeglarstwo sportowe</a>
-            <a href="index.php#hobby">Żeglarstwo turystyczne</a>
+            <a href="/#sport">Żeglarstwo sportowe</a>
+            <a href="/#hobby">Żeglarstwo turystyczne</a>
           </div>
         </div>
-        <div class="sub-nav"><a href="pictures.php">Galeria zdjęć</a></div>
-        <div class="sub-nav active"><a href="quiz.php">Quiz</a></div>
+        <div class="sub-nav"><a href="/pictures">Galeria zdjęć</a></div>
+        <div class="sub-nav active"><a href="/quiz">Quiz</a></div>
       </nav>
       <main>
         <section id="quiz">

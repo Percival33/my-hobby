@@ -19,23 +19,30 @@
         <div class="sub-nav">
           <a href="index.php">Strona główna</a>
           <div class="sub-nav-alt">
-            <a href="index.php#sport">Żeglarstwo sportowe</a>
-            <a href="index.php#hobby">Żeglarstwo turystyczne</a>
+            <a href="/#sport">Żeglarstwo sportowe</a>
+            <a href="/#hobby">Żeglarstwo turystyczne</a>
           </div>
         </div>
-        <div class="sub-nav active"><a href="pictures.php">Galeria zdjęć</a></div>
-        <div class="sub-nav"><a href="quiz.php">Quiz</a></div>
+        <div class="sub-nav active"><a href="/pictures">Galeria zdjęć</a></div>
+        <div class="sub-nav"><a href="/quiz">Quiz</a></div>
       </nav>
       <main>
         <section>
-          <h3>Kliknij <a href="login.php">tutaj</a> aby dodać własne zdjęcia!</h3>
+          <h3>Kliknij <a href="/login">tutaj</a> aby dodać własne zdjęcia!</h3>
         </section>
         <section>
           <div class="gallery">
             <ul>
-            foreach ($scanned_directory as $plik) {
-              echo '<img src="'.$directory.'/'.$plik.'" alt="emotka"><br />';
-            }
+            <?php 
+              if($pictures) {
+                foreach ($pictures as $img) {
+                  echo '<img src="'."../images/".$img.'" alt="dupa"/><br />';
+                }
+              }
+              else {
+                echo 'Brak zdjęć do wyświetlenia. Dodaj aby wyświetlić.';
+              }
+            ?>
             </ul>
           </div>
         </section>
