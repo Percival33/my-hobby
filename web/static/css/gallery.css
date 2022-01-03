@@ -1,0 +1,82 @@
+label {
+    font-size: 24px;
+}
+
+input {
+    display: block;
+    min-width: 12vw;
+    min-height: 3vh;
+    font-size: 15px;
+}
+
+input[type=button], input[type=submit], input[type=file] {
+    font-size: 20px;
+    color: #e6f3db;
+    border: 1px solid darkmagenta;
+    padding: 5px 10px 5px;
+    background-color: #034959;
+}
+
+button {
+    outline: none;
+    border: 1px solid lightcoral;
+}
+
+h4.error {
+    color: red;
+}
+
+h4.message {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+p.author {
+    color: green;
+}
+
+main section a.link {
+    display: inline-block;
+    padding: 10px 20px 5px;
+}
+
+div.gallery a.link {
+    padding: 10px 20px 5px;
+    border: 1px solid lightcoral;
+}
+
+main section a.profile-link {
+    color: darkmagenta;
+    padding: 10px 20px 5px;
+}
+
+main section a.return-link {
+    border: 1px solid lightcoral;
+    padding: 10px 20px 5px;
+}
+
+main section a.active-link {
+    color: blue;
+    padding: 10px 20px 5px;
+}
+
+main section a.edit-link {
+    color: darkblue;
+    padding: 10px 20px 5px;
+}
+
+div.gallery a.pagination {
+    padding: 10px 20px 5px;
+    background-color: lightpink;
+}
+
+div.gallery p.pagination {
+    display: inline-block;
+    padding: 10px 20px 5px;
+    font-size: 20px;
+    background-color: lightblue;
+}
+
+div.gallery p.warning {
+    color: mediumvioletred;
+}

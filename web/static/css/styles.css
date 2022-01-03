@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  font-family: "Roboto", arial, sans-serif;
+  background-color: #f2f2f2;
+  letter-spacing: 0.5px;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+div.wrap {
+  margin: 0 auto;
+  color: rgba(30, 30, 30, 1);
+  min-height: 100vh;
+  max-width: 100vw;
+  line-height: 150%;
+}
+
+.active {
+  background-color: #034959;
+}
+
+header {
+  font-size: 2rem;
+  padding: 90px 50px;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 72, 115, 1) 35%,
+    rgba(51, 51, 51, 1) 100%
+  );
+  color: white;
+}
+
+header h1 {
+  line-height: 150%;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.4rem;
+}
+
+nav .sub-nav a {
+  display: block;
+  height: 100%;
+  line-height: 100%;
+  padding: 14px 26px;
+  text-decoration: none;
+  color: lightblue;
+  transition: 0.5s;
+}
+
+nav .sub-nav {
+  float: left;
+}
+
+nav .sub-nav-alt {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+nav .sub-nav-alt a {
+  float: left;
+  display: block;
+  background-color: #333;
+}
+
+nav .sub-nav a:hover,
+nav .sub-nav-alt a:hover {
+  background-color: #022931;
+}
+
+nav .sub-nav:hover .sub-nav-alt {
+  display: block;
+}
+
+main {
+  margin: 5% auto;
+  width: 70%;
+  text-align: justify;
+}
+
+main h3 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid rgba(191, 44, 56, 0.5);
+  padding-bottom: 2px;
+  margin: 1.5rem auto;
+}
+
+main section {
+  margin: 2% auto;
+  line-height: 150%;
+}
+
+main section ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "arrow arrow";
+  list-style: none;
+  font-weight: bold;
+}
+
+main section p {
+  margin-bottom: 10px;
+}
+
+main section p.center {
+  padding: 10px 0;
+  text-align: center;
+}
+
+main ul li a {
+  text-decoration: none;
+  display: block;
+}
+
+main ul li img {
+  grid-area: arrow;
+  width: 100px;
+}
+
+main ul li svg {
+  height: 10px;
+}
+
+main ul li svg rect {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+main section ul li {
+  text-align: center;
+}
+
+main section a {
+  color: #bf2c38;
+  text-decoration: none;
+}
+
+div.img-set1 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 0.2rem;
+  grid-template-areas:
+    "img img"
+    "img img"
+    "img img";
+}
+
+div.img-set2 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 0.2rem;
+  grid-template-areas: "img img";
+}
+
+div.img-set1 div,
+div.img-set2 div {
+  /* position:absolute; */
+  /* display: flex; */
+  position: relative;
+  border: 2px solid #022840;
+}
+
+div.img-set1 div p,
+div.img-set2 div p {
+  display: block;
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+div.img-set1 img,
+div.img-set2 img {
+  /* grid-area: auto; */
+  /* margin: 2% 1%; */
+  width: 100%;
+  max-height: 80%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+div.img-set1 div:hover img,
+div.img-set2 div:hover img {
+  max-height: 100%;
+  height: 100%;
+}
+
+div.img-set1 div:hover img + p,
+div.img-set2 div:hover img + p {
+  display: none;
+  /* height: 0%; */
+}
+
+footer {
+  margin: 0 auto;
+  padding: 2% 0;
+  background-color: #022840;
+  color: #f2f2f2;
+  text-align: center;
+}
+
+footer a {
+  color: lightblue;
+  text-decoration: none;
+}
+
+main label.quiz {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 5%;
+  font-size: 1.5rem;
+  border-bottom: 2px solid rgba(191, 44, 56, 0.5);
+}
+
+main form input.btn {
+  display: inline;
+  float: left;
+  padding: 1% 2%;
+  outline: none;
+  /* margin: 0 auto; */
+  width: 50%;
+  background-color: #034959;
+  /* color: lightblue; */
+  color: #f2f2f2;
+  font-size: 100%;
+}
+
+main form input.btn:hover {
+  background-color: #022931;
+}
+
+main form div div {
+  margin: 1% 5%;
+}
+
+main form div label.question {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid #036873;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+th,
+td {
+  border: 1px solid #036873;
+  padding: 5px 10px;
+}
+
+th {
+  background-color: #034959;
+  color: #f2f2f2;
+}
+
+tbody tr:hover {
+  animation: animation 1s;
+  animation-fill-mode: forwards;
+}
+
+tbody tr:hover td a {
+  color: #ff7884;
+}
+
+@keyframes animation {
+  /* dodac więcej klatek animacji */
+  0% {
+    background-color: #f2f2f2;
+  }
+
+  25% {
+    background-color: #a2babf;
+  }
+
+  50% {
+    background-color: #1e5c6a;
+  }
+
+  75% {
+    background-color: #045a6b;
+  }
+
+  100% {
+    background-color: #034959;
+    color: #f2f2f2;
+  }
+}
+
+p#dialog-result {
+  text-align: center;
+}
+
+button.ui-dialog-titlebar-close {
+  display: none;
+}
+
+button.ui-button {
+  width: 100%;
+  margin: 0 auto;
+}
+
+div.ui-tabs-panel.img-Tabs img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+div.ui-tabs-panel.img-Tabs p {
+  padding: 5px 20px;
+}
+
+a.ui-tabs-anchor {
+  display: block;
+  padding: 10px 20px;
+}
+
+#js-rotating {
+  color: #bf2c38;
+  font-weight: bold;
+}
+
+#results-session,
+#results-local {
+  overflow: hidden;
+}
+
+.btn-result {
+  float: right;
+  font-size: 1rem;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  height: auto;
+}
+#results-session h3 button,
+#results-local h3 button {
+  outline: none;
+  border: none;
+  background-color: #036873;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 16px;
+  }
+
+  main section ul {
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 1fr;
+  }
+
+  main ul li img {
+    width: 50%;
+  }
+
+  main ul li svg {
+    width: 75%;
+  }
+
+  div.img-set1 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    grid-template-areas: "img" "img" "img" "img" "img" "img";
+  }
+
+  div.img-set2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr;
+    grid-template-areas: "img" "img";
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 0.9rem;
+  }
+}
