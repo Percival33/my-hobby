@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+	<xs:complexType name="sailingType">
+		<xs:sequence>
+			<xs:element name="definition" type="definitionType"/>
+			<xs:element name="types" type="typesType">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="typesType">
+		<xs:sequence>
+			<xs:element name="type" type="kindType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="kindType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="sport"/>
+			<xs:enumeration value="hobby"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="definitionType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="galleryType">
+		<xs:sequence>
+			<xs:element name="image" type="imageType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="classType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="weight" type="xs:decimal" use="required" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="boatType">
+		<xs:sequence>
+			<xs:element name="class" type="classType"/>
+			<xs:element name="crew" type="crewType"/>
+			<xs:element name="link" type="adressType"/>
+		</xs:sequence>
+		<xs:attribute name="category">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="olimpic"/>
+					<xs:enumeration value="hobbyist"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="crewType">
+		<xs:simpleContent>
+			<xs:extension base="xs:integer">
+				<xs:attribute name="gender" type="genderType" default="mixed"/>
+				<xs:attribute name="limit" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:maxInclusive value="10"/>
+							<xs:minInclusive value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="genderType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="male|female|mixed|both"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="imageType">
+		<xs:simpleContent>
+			<xs:extension base="adressType">
+				<xs:attribute name="link" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="adressType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="src" type="xs:anyURI" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="sailing-typeType">
+		<xs:sequence>
+			<xs:element name="description" type="definitionType"/>
+			<xs:element name="gallery" type="galleryType"/>
+			
+		</xs:sequence>
+		<xs:attribute name="kind" type="kindType"/>
+	</xs:complexType>
+
+	<xs:complexType name="sailorsType">
+		<xs:sequence>
+			<xs:element name="sailor" type="sailorType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="sailorType">
+		<xs:sequence>
+			<xs:group ref="sailorGroup"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="hipertext">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sailing" type="sailingType"/>
+				<xs:element name="sailing-type" type="sailing-typeType" maxOccurs="unbounded"/>
+				<xs:element name="sailors" type ="sailorsType"/>
+				<xs:element name="quiz" type="quizType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="results" type="resultsType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="student" type="studentType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="boats" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="boat" type="boatType" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="questionType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="200"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="questionSectionType">
+		<xs:choice>
+			<xs:element name="question" type="questionType"/>
+			<xs:element name="answer" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="quizType">
+		<xs:sequence>
+			<xs:element name="questionSection" type="questionSectionType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="resultsType">
+		<xs:sequence>
+			<xs:element name="result" type="resultType" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="saved" default="no">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="yes|no"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:simpleType name="resultType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="7"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="achievementListType">
+		<xs:list itemType="xs:string"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="achievementList">
+		<xs:restriction base="achievementListType">
+			<xs:minLength value="0"/>
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="timesOnOlimpicsIntType">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="timesOnOlimpicsStringType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="one"/>
+			<xs:enumeration value="two"/>
+			<xs:enumeration value="three"/>
+			<xs:enumeration value="four"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="timesOnOlimpicsType">
+		<xs:union memberTypes="timesOnOlimpicsStringType timesOnOlimpicsIntType"/>
+	</xs:simpleType>
+
+	<xs:group name="sailorGroup">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="surname" type="xs:string"/>
+			<xs:element name="nationality" type="xs:string"/>
+			<xs:element name="birthDate" type="xs:date"/>
+			<xs:element name="achievements" type="achievementList"/>
+			<xs:element name="timesOnOlimpics" type="timesOnOlimpicsType"/>
+			<xs:element name="Wikipedia" type="adressType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:complexType name="studentType">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="surname" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
